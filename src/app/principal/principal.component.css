@@ -1,0 +1,109 @@
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f1f1;
+  color: #000;
+  padding: 10px 20px;
+}
+
+.left-logo img {
+  max-height: 40px;
+}
+
+.right-buttons {
+  text-align: right;
+}
+
+.right-buttons button {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+.right-buttons button:hover {
+  background-color: #afcbe9;
+}
+
+.registro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 20px;
+  max-width: 10px; /* Esta línea probablemente no es correcta, verifica si es necesaria */
+  margin: 0 auto;
+  background-color: #000000;
+}
+
+.formulario {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #06d7fc;
+  border-radius: 8px;
+  width: 95%;
+  margin-bottom: 20px;
+}
+
+.formulario h3 {
+  margin-top: 0;
+}
+
+.formulario label {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.formulario input[type="text"],
+.formulario input[type="number"],
+.formulario textarea {
+  width: calc(100% - 16px);
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.formulario button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background-color: #0056b3;
+}
+
+.Flabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #61a6f0;
+  padding: 10px 20px;
+}
+
+.Flabel p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.Flabel button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Flabel button:hover {
+  background-color: #0056b3;
+}

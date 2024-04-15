@@ -1,0 +1,67 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8fd8eb;
+  color: #000;
+  padding: 5px 20px; /* Ajuste de padding para hacer la barra de navegación más delgada */
+}
+
+.left-logo img {
+  max-height: 40px;
+}
+
+.right-buttons {
+  text-align: right;
+}
+
+.right-buttons button {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px
+}
+
+.right-buttons button:hover {
+  background-color: #afcbe9;
+}
+
+.tabla {
+  width: 800px; /* Ancho total de la tabla */
+  margin: 20px auto; /* Centra la tabla horizontalmente */
+  overflow: hidden; /* Para limpiar el float */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.celda {
+  width: calc(25% - 20px); /* Ancho fijo de cada celda (25% del ancho total menos el espacio para márgenes) */
+  height: 180px; /* Altura fija de cada celda */
+  background-color: #f0f0f0;
+  margin: 10px;
+  border: 1px solid #ccc;
+  text-align: center; /* Centra el texto dentro de la celda */
+  box-sizing: border-box; /* Incluye el borde en el tamaño total de la celda */
+  padding: 10px; /* Espacio interno dentro de la celda */
+}
+
+.titulo {
+  margin-bottom: 10px; /* Espacio entre el título y el cuadro de texto */
+}
+
+input[type="text"] {
+  width: calc(100% - 20px); /* El texto ocupa todo el ancho disponible dentro de la celda, restando el espacio para el padding */
+  height: 30px; /* Altura fija para el cuadro de texto */
+  box-sizing: border-box; /* Incluye el borde en el tamaño total del cuadro de texto */
+}
