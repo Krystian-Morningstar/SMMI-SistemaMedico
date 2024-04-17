@@ -1,0 +1,100 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fdfdfd; /* Cambio de color a azul más intenso */
+    color: #000000; /* Texto en color blanco para mayor contraste */
+    padding: 5px 20px; /* Ajuste de padding */
+    border-radius: 20px; /* Hace los bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Agrega una sombra para un efecto más tridimensional */
+  }
+  
+  .left-logo img {
+    max-height: 40px; /* Mantenemos la altura máxima */
+    border-radius: 70%; /* Hacemos que la imagen sea circular */
+  
+  }
+  .logo-title {
+    font-size: 24px; /* Tamaño de las siglas */
+    font-weight: bold; /* Negrita para resaltar */
+    margin-right: 70px; /* Reducir el espacio entre el título y la barra de búsqueda */
+  }
+  
+  
+  
+  .right-buttons {
+    text-align: right;
+  }
+  
+  .right-buttons button {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 10px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px
+  }
+  
+  .right-buttons button:hover {
+    background-color: #afcbe9;
+  }
+  
+  .tabla {
+    width: 1250px; /* Ancho total de la tabla */
+    margin: 20px auto; /* Centra la tabla horizontalmente */
+    overflow: hidden; /* Para limpiar el float */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .celda {
+    width: calc(25% - 20px); /* Ancho fijo de cada celda (25% del ancho total menos el espacio para márgenes) */
+    height: 250px; /* Altura fija de cada celda */
+    background-color: #f0f0f0;
+    margin: 10px;
+    border: 1px solid #ccc;
+    text-align: center; /* Centra el texto dentro de la celda */
+    box-sizing: border-box; /* Incluye el borde en el tamaño total de la celda */
+    padding: 10px; /* Espacio interno dentro de la celda */
+  }
+  
+  .titulo {
+    background-image: url('../../assets/fondo1.jpeg'); /* Agrega la imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para que cubra todo el área del título */
+    color: #fff; /* Texto en color blanco para mayor contraste */
+    padding: 15px 40px 15px 15px; /* Ajuste de padding para dejar espacio para una imagen o un icono a la izquierda */
+    border-radius: 5px; /* Hace los bordes redondeados */
+    width: calc(110% - 55px); /* Hace que el título abarque todo el ancho de la celda menos el espacio para la imagen o el icono y el padding */
+    margin-top: -15px; /* Mueve el título hacia arriba para superponerse ligeramente con la celda */
+    margin-left: -15px; /* Mueve el título hacia la izquierda para superponerse ligeramente con la celda */
+    font-size: 18px; /* Ajusta el tamaño del texto */
+    line-height: 1.2; /* Ajusta el espaciado entre líneas */
+    font-weight: bold; /* Ajusta el peso del texto a negrita */
+    display: flex; /* Permite alinear verticalmente la imagen o el icono */
+    align-items: center; /* Alinea verticalmente la imagen o el icono */
+  
+  }
+  
+  input[type="text"] {
+    width: calc(100% - 20px); /* El texto ocupa todo el ancho disponible dentro de la celda, restando el espacio para el padding */
+    height: 30px; /* Altura fija para el cuadro de texto */
+    box-sizing: border-box; /* Incluye el borde en el tamaño total del cuadro de texto */
+  }
+  
+  .search-bar input[type="text"] {
+    width: calc(95% - 20px); /* Ancho del cuadro de texto ajustado */
+    margin-left:  00px; /* Mover la barra de búsqueda más a la izquierda */
+  }
+  .search-bar {
+    flex: 8; /* Hace que la barra de búsqueda ocupe todo el espacio disponible */
+    margin-left: -1000; 
+  }

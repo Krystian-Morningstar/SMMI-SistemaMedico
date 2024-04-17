@@ -1,59 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Agregando la librería de Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Barra de Navegación</title>
+  
 </head>
+<div class="navbar">
+  <div class="left-logo">
+    <img src="../assets/logo.jpg" alt="Logo">
+  </div>
+  <div class="logo-title">SMMI</div>
+  <div class="right-buttons">
+    <button><i class="fas fa-plus"></i></button>
+    <button><i class="fas fa-home"></i></button>
+    <button><i class="fas fa-user"></i></button>
+  </div>
+</div>
 <body>
 
-  <div class="navbar">
-    <div class="left-logo">
-      <img src="../assets/fondo1.jpeg" alt="Logo">
-    </div>
-    <div class="right-buttons">
-      <button><i class="fas fa-plus"></i></button>
-      <button><i class="fas fa-home"></i></button>
-      <button><i class="fas fa-user"></i></button>
-    </div>
-  </div>
 
-  <div class="tabla">
-      <div class="celda">
-          <div class="titulo">Título 1</div>
-          <input type="text" value="Texto 1">
+  <div class="Flabel">
+    <label for="Registro">Registro</label>
+    <button type="submit">Registrar </button> 
+    </div>
+    <div class="formulario">
+      <div class="columna">
+        <div class="campo">
+          <div class="campo-titulo">Nombre:</div>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        
+        <div class="campo">
+          <div class="campo-titulo">Edad:</div>
+          <input type="number" id="edad" name="edad" required>
+        </div>
+        <div class="campo">
+          <div class="campo-titulo">Habitacion:</div>
+          <input type="number" id="habitacion" name="habitacion" required>
+        </div>
+        <div class="campo">
+          <div class="campo-titulo">Padecimientos:</div>
+          <textarea id="padecimientos" name="padecimientos" rows="3"></textarea>
+        </div>
+        
       </div>
-      <div class="celda">
-          <div class="titulo">Título 2</div>
-          <input type="text" value="Texto 2">
-      </div>
-      <div class="celda">
-          <div class="titulo">Título 3</div>
-          <input type="text" value="Texto 3">
-      </div>
-      <div class="celda">
-          <div class="titulo">Título 4</div>
-          <input type="text" value="Texto 4">
-      </div>
-      <div class="celda">
-          <div class="titulo">Título 5</div>
-          <input type="text" value="Texto 5">
-      </div>
-      <div class="celda">
-          <div class="titulo">Título 6</div>
-          <input type="text" value="Texto 6">
-      </div>
-      <div class="celda">
-          <div class="titulo">Título 7</div>
-          <input type="text" value="Texto 7">
-      </div>
-      <div class="celda">
-          <div class="titulo">Título 8</div>
-          <input type="text" value="Texto 8">
-      </div>
-      <!-- Agrega 8 cuadros más -->
-  </div>
 
+      <div class="columna">
+        
+        <div class="campo">
+          <div class="campo-titulo">Causa de ingreso:</div>
+          <input type="text" id="causa" name="causa" required>
+        </div>
+  
+        <div class="campo">
+          <div class="campo-titulo">Enfermera:</div>
+          <input type="text" id="enfermera" name="enfermera" required>
+        </div>
+
+        <div class="campo">
+          <div class="campo-titulo">Especialidad:</div>
+          <input type="number" id="especialidad" name="especialidad" required>
+        </div>
+
+        <div class="campo">
+          <div class="campo-titulo">Alergias:</div>
+          <textarea id="alergias" name="alergias" rows="3"></textarea>
+        </div>
+      </div>
+    </div>
 </body>
 </html>

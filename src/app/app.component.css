@@ -9,13 +9,22 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #8fd8eb;
-  color: #000;
-  padding: 5px 20px; /* Ajuste de padding para hacer la barra de navegación más delgada */
+  background-color: #fdfdfd; /* Cambio de color a azul más intenso */
+  color: #000000; /* Texto en color blanco para mayor contraste */
+  padding: 5px 20px; /* Ajuste de padding */
+  border-radius: 20px; /* Hace los bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Agrega una sombra para un efecto más tridimensional */
 }
 
 .left-logo img {
-  max-height: 40px;
+  max-height: 40px; /* Mantenemos la altura máxima */
+  border-radius: 70%; /* Hacemos que la imagen sea circular */
+}
+
+.logo-title {
+  font-size: 24px; /* Tamaño de las siglas */
+  font-weight: bolder; /* Negrita para resaltar */
+  margin-right: 1000px;
 }
 
 .right-buttons {
@@ -29,39 +38,86 @@ body {
   margin-left: 10px;
   padding: 8px;
   border: none;
-  border-radius: 4px
+  border-radius: 4px;
 }
 
 .right-buttons button:hover {
   background-color: #afcbe9;
 }
-
-.tabla {
-  width: 800px; /* Ancho total de la tabla */
-  margin: 20px auto; /* Centra la tabla horizontalmente */
-  overflow: hidden; /* Para limpiar el float */
+.Flabel {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url('../assets/hospital.jpg'); /* Agrega la imagen de fondo */
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el área */
+  background-position: center; /* Centra la imagen de fondo */
+  color: #ffffff; /* Texto en color blanco para mayor contraste */
+  padding: 10px 20px; /* Ajuste de padding */
+  border-radius: 5px; /* Hace los bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Agrega una sombra para un efecto más tridimensional */
+  width: 1070px; /* Establece el ancho deseado */
+  margin: 20px auto 0; /* Centra el elemento horizontalmente y agrega un margen superior */
+  font-weight: bold;
 }
 
-.celda {
-  width: calc(25% - 20px); /* Ancho fijo de cada celda (25% del ancho total menos el espacio para márgenes) */
-  height: 180px; /* Altura fija de cada celda */
-  background-color: #f0f0f0;
-  margin: 10px;
-  border: 1px solid #ccc;
-  text-align: center; /* Centra el texto dentro de la celda */
-  box-sizing: border-box; /* Incluye el borde en el tamaño total de la celda */
-  padding: 10px; /* Espacio interno dentro de la celda */
+.Flabel p {
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.titulo {
-  margin-bottom: 10px; /* Espacio entre el título y el cuadro de texto */
+.Flabel button {
+  background-color: #eaecf0;
+  color: #3e9db4;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-input[type="text"] {
-  width: calc(100% - 20px); /* El texto ocupa todo el ancho disponible dentro de la celda, restando el espacio para el padding */
-  height: 30px; /* Altura fija para el cuadro de texto */
-  box-sizing: border-box; /* Incluye el borde en el tamaño total del cuadro de texto */
+.Flabel button:hover {
+  background-color: #0056b3;
 }
+
+.formulario {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente los contenedores de las columnas */
+  margin-top: 0px;
+  margin-left: 120px ;
+  background-color: #e4e3e3;
+  width: 1110px; 
+}
+
+.columna {
+  flex: 1;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo {
+  margin-bottom: 20px;
+}
+
+.campo-titulo {
+  font-weight: bold;
+}
+.formulario input {
+  width: 100%;
+  height: 40px; /* Establece la altura deseada */
+  border-radius: 10px; /* Redondea los bordes */
+  border: 1px solid #ccc; /* Agrega un borde para mantener la apariencia */
+  padding: 8px; /* Añade espacio dentro del elemento */
+  box-sizing: border-box; /* Incluye el padding y el borde en el ancho/altura total */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra minimalista */
+  }
+  .formulario textarea {
+    width: 100%;
+    height: 100px; /* Altura deseada */
+    border-radius: 10px; /* Redondea los bordes */
+    border: 1px solid #ccc; /* Agrega un borde para mantener la apariencia */
+    padding: 8px; /* Añade espacio dentro del elemento */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho/altura total */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra minimalista */
+  }
+  

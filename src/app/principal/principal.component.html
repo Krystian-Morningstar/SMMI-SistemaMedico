@@ -5,12 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Barra de Navegación</title>
-  <link rel="stylesheet" href="principal.component.css">
+  
 </head>
 <div class="navbar">
   <div class="left-logo">
-    <img src="../assets/fondo1.jpeg" alt="Logo">
+    <img src="../assets/logo.jpg" alt="Logo">
   </div>
+  <div class="logo-title">SMMI</div>
   <div class="right-buttons">
     <button><i class="fas fa-plus"></i></button>
     <button><i class="fas fa-home"></i></button>
@@ -25,32 +26,49 @@
     <button type="submit">Registrar </button> 
     </div>
     <div class="formulario">
-      <form>
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+      <div class="columna">
+        <div class="campo">
+          <div class="campo-titulo">Nombre:</div>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
         
-        <label for="edad">Edad:</label>
-        <input type="number" id="edad" name="edad" required>
+        <div class="campo">
+          <div class="campo-titulo">Edad:</div>
+          <input type="number" id="edad" name="edad" required>
+        </div>
+        <div class="campo">
+          <div class="campo-titulo">Habitacion:</div>
+          <input type="number" id="habitacion" name="habitacion" required>
+        </div>
+        <div class="campo">
+          <div class="campo-titulo">Padecimientos:</div>
+          <textarea id="padecimientos" name="padecimientos" rows="3"></textarea>
+        </div>
         
-        <label for="padecimientos">Padecimientos:</label>
-        <textarea id="padecimientos" name="padecimientos" rows="3"></textarea>
+      </div>
+
+      <div class="columna">
         
-        <label for="alergias">Alergias:</label>
-        <textarea id="alergias" name="alergias" rows="3"></textarea>
-        
-        <label for="causa">Causa de ingreso:</label>
-        <input type="text" id="causa" name="causa" required>
-        
-        
-      </form>
-      <button type="submit">Registrar </button> 
+        <div class="campo">
+          <div class="campo-titulo">Causa de ingreso:</div>
+          <input type="text" id="causa" name="causa" required>
+        </div>
+  
+        <div class="campo">
+          <div class="campo-titulo">Enfermera:</div>
+          <input type="text" id="enfermera" name="enfermera" required>
+        </div>
+
+        <div class="campo">
+          <div class="campo-titulo">Especialidad:</div>
+          <input type="number" id="especialidad" name="especialidad" required>
+        </div>
+
+        <div class="campo">
+          <div class="campo-titulo">Alergias:</div>
+          <textarea id="alergias" name="alergias" rows="3"></textarea>
+        </div>
+      </div>
     </div>
-  
-  
-  
-  
-
-
-
 </body>
 </html>
