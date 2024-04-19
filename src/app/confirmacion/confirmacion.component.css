@@ -1,0 +1,90 @@
+
+
+/* Estilos para los divs en row */
+.row-container {
+    display: flex; /* Usa Flexbox para alinear los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    height: 100vh; /* Establece la altura del contenedor al 100% del viewport */
+  }
+  
+  
+  .column {
+    flex: 1; /* Los divs ocupan el mismo espacio dentro del contenedor */
+    margin: 10px; /* Espacio entre los divs */
+    padding: 20px; /* Añade espacio alrededor del contenido */
+    border-radius: 10px; /* Borde redondeado */
+    max-width: 500px; /* Ancho máximo */
+    justify-content: space-between; 
+  }
+  
+  .column:nth-child(odd) {
+    background-color: #ebebeb; /* Color de fondo para la primera columna */
+  }
+  
+  .column:nth-child(even) {
+    background-color: #ebebeb; /* Color de fondo para la segunda columna */
+  }
+  
+  /* Estilos para el Flabel */
+  .Flabel {
+    background-image: url('../assets/hospital.jpg'); /* Cambia esta URL por la de tu imagen de fondo */
+    background-size: cover;
+    padding: 20px;
+    border-radius: 10px;
+    margin: -20px; /* Ajusta el margen para compensar el padding */
+    width: calc(91.5% + 40px); /* Ancho igual al 100% más el doble del padding horizontal */
+    height: 15px; /* Altura deseada del Flabel */
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: space-between; /* Espacia los elementos dentro del Flabel */
+    align-items: center; /* Centra verticalmente los elementos */
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+  }
+  .Flabel p {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;}
+  
+    .Flabel button {
+      background-color: rgba(172, 172, 172, 0.7); /* Fondo semi transparente */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    
+  
+  .Flabel button:hover {
+    background-color: #0056b3;
+  }
+  label {
+    font-family: "Times New Roman", serif; /* Cambia la fuente del texto */
+    font-size: 25px; /* Tamaño de fuente */
+    font-weight: bold; /* Peso de la fuente */
+    color: #fffefe; /* Cambia el color del texto a rojo */
+  }
+  .column div {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif; /* Tipo de letra */
+    font-size: 16px; /* Tamaño de fuente */
+    color: #0300d1; /* Color de texto */
+    margin-bottom: 5px; /* Margen inferior entre elementos */
+    text-align: center; /* Centra el texto horizontalmente */
+  }
+  
+  .column button {
+    background-color: #007bff; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    font-size: 16px; /* Tamaño de fuente */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Elimina el borde */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    margin: 0 70px; /* Añade margen horizontal entre los botones */
+  }
+  
+  .column button:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar sobre el botón */
+  }
