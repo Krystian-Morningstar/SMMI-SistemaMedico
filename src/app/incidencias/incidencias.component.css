@@ -1,0 +1,102 @@
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fdfdfd;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .logo img {
+    max-height: 40px;
+    border-radius: 50%; /* Hace que el logo sea redondeado */
+    margin-right: 10px; /* Espacio entre el logo y el texto */
+  }
+  
+  .logo-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .right-section button {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 10px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .right-section button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos para los divs en row */
+  .row-container {
+    display: flex;
+    margin-top: 30px;
+  }
+  
+  .column {
+    flex: 1; /* Los divs ocupan el mismo espacio dentro del contenedor */
+    margin: 10px; /* Espacio entre los divs */
+    padding: 20px; /* Añade espacio alrededor del contenido */
+    border-radius: 10px; /* Borde redondeado */
+  }
+  
+  .column:nth-child(odd) {
+    background-color: #ebebeb; /* Color de fondo para la primera columna */
+  }
+  
+  .column:nth-child(even) {
+    background-color: #ebebeb; /* Color de fondo para la segunda columna */
+  }
+  
+  /* Estilos para el Flabel */
+  .Flabel {
+    background-image: url('../../assets/hospital.jpg'); /* Cambia esta URL por la de tu imagen de fondo */
+    background-size: cover;
+    padding: 20px;
+    border-radius: 10px;
+    margin: -20px; /* Ajusta el margen para compensar el padding */
+    width: calc(93.5% + 40px); /* Ancho igual al 100% más el doble del padding horizontal */
+    height: 15px; /* Altura deseada del Flabel */
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: space-between; /* Espacia los elementos dentro del Flabel */
+    align-items: center; /* Centra verticalmente los elementos */
+  }
+  .Flabel p {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;}
+  
+    .Flabel button {
+      background-color: rgba(172, 172, 172, 0.7); /* Fondo semi transparente */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    
+  
+  .Flabel button:hover {
+    background-color: #0056b3;
+  }
+  label {
+    font-family: "Times New Roman", serif; /* Cambia la fuente del texto */
+    font-size: 25px; /* Tamaño de fuente */
+    font-weight: bold; /* Peso de la fuente */
+    color: #fffefe; /* Cambia el color del texto a rojo */
+  }
+  .column div {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif; /* Tipo de letra */
+    font-size: 16px; /* Tamaño de fuente */
+    color: #5c94fd; /* Color de texto */
+    margin-bottom: 5px; /* Margen inferior entre elementos */
+  }
