@@ -1,90 +1,100 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdfdfd; /* Cambio de color a azul más intenso */
+  color: #000000; /* Texto en color blanco para mayor contraste */
+  padding: 5px 20px; /* Ajuste de padding */
+  border-radius: 20px; /* Hace los bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Agrega una sombra para un efecto más tridimensional */
+}
 
-/* Estilos para los divs en row */
-.row-container {
-  display: flex; /* Usa Flexbox para alinear los elementos */
-  justify-content: center; /* Centra los elementos horizontalmente */
-  align-items: center; /* Centra los elementos verticalmente */
-  height: 100vh; /* Establece la altura del contenedor al 100% del viewport */
+.left-logo img {
+  max-height: 40px; /* Mantenemos la altura máxima */
+  border-radius: 70%; /* Hacemos que la imagen sea circular */
+
+}
+.logo-title {
+  font-size: 24px; /* Tamaño de las siglas */
+  font-weight: bold; /* Negrita para resaltar */
+  margin-right: 70px; /* Reducir el espacio entre el título y la barra de búsqueda */
 }
 
 
-.column {
-  flex: 1; /* Los divs ocupan el mismo espacio dentro del contenedor */
-  margin: 10px; /* Espacio entre los divs */
-  padding: 20px; /* Añade espacio alrededor del contenido */
-  border-radius: 10px; /* Borde redondeado */
-  max-width: 500px; /* Ancho máximo */
-  justify-content: space-between; 
+
+.right-buttons {
+  text-align: right;
 }
 
-.column:nth-child(odd) {
-  background-color: #ebebeb; /* Color de fondo para la primera columna */
+.right-buttons button {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px
 }
 
-.column:nth-child(even) {
-  background-color: #ebebeb; /* Color de fondo para la segunda columna */
+.right-buttons button:hover {
+  background-color: #afcbe9;
 }
 
-/* Estilos para el Flabel */
-.Flabel {
-  background-image: url('../assets/hospital.jpg'); /* Cambia esta URL por la de tu imagen de fondo */
-  background-size: cover;
-  padding: 20px;
-  border-radius: 10px;
-  margin: -20px; /* Ajusta el margen para compensar el padding */
-  width: calc(91.5% + 40px); /* Ancho igual al 100% más el doble del padding horizontal */
-  height: 15px; /* Altura deseada del Flabel */
-  display: flex; /* Utiliza flexbox para alinear los elementos */
-  justify-content: space-between; /* Espacia los elementos dentro del Flabel */
-  align-items: center; /* Centra verticalmente los elementos */
-  display: flex; /* Utiliza flexbox para alinear los elementos */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-}
-.Flabel p {
-  font-size: 18px;
-  font-weight: bold;
-  color: white;}
-
-  .Flabel button {
-    background-color: rgba(172, 172, 172, 0.7); /* Fondo semi transparente */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-
-.Flabel button:hover {
-  background-color: #0056b3;
-}
-label {
-  font-family: "Times New Roman", serif; /* Cambia la fuente del texto */
-  font-size: 25px; /* Tamaño de fuente */
-  font-weight: bold; /* Peso de la fuente */
-  color: #fffefe; /* Cambia el color del texto a rojo */
-}
-.column div {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif; /* Tipo de letra */
-  font-size: 16px; /* Tamaño de fuente */
-  color: #0300d1; /* Color de texto */
-  margin-bottom: 5px; /* Margen inferior entre elementos */
-  text-align: center; /* Centra el texto horizontalmente */
+.tabla {
+  width: 1250px; /* Ancho total de la tabla */
+  margin: 20px auto; /* Centra la tabla horizontalmente */
+  overflow: hidden; /* Para limpiar el float */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.column button {
-  background-color: #007bff; /* Color de fondo */
-  color: #ffffff; /* Color del texto */
-  font-size: 16px; /* Tamaño de fuente */
-  padding: 10px 20px; /* Espaciado interno */
-  border: none; /* Elimina el borde */
-  border-radius: 5px; /* Borde redondeado */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-  margin: 0 70px; /* Añade margen horizontal entre los botones */
+.celda {
+  width: calc(25% - 20px); /* Ancho fijo de cada celda (25% del ancho total menos el espacio para márgenes) */
+  height: 250px; /* Altura fija de cada celda */
+  background-color: #f0f0f0;
+  margin: 10px;
+  border: 1px solid #ccc;
+  text-align: center; /* Centra el texto dentro de la celda */
+  box-sizing: border-box; /* Incluye el borde en el tamaño total de la celda */
+  padding: 10px; /* Espacio interno dentro de la celda */
 }
 
-.column button:hover {
-  background-color: #0056b3; /* Cambia el color de fondo al pasar sobre el botón */
+.titulo {
+  background-image: url('../assets/hospital.jpg'); /* Agrega la imagen de fondo */
+  background-size: cover; /* Ajusta el tamaño de la imagen para que cubra todo el área del título */
+  color: #fff; /* Texto en color blanco para mayor contraste */
+  padding: 15px 40px 15px 15px; /* Ajuste de padding para dejar espacio para una imagen o un icono a la izquierda */
+  border-radius: 5px; /* Hace los bordes redondeados */
+  width: calc(110% - 55px); /* Hace que el título abarque todo el ancho de la celda menos el espacio para la imagen o el icono y el padding */
+  margin-top: -15px; /* Mueve el título hacia arriba para superponerse ligeramente con la celda */
+  margin-left: -15px; /* Mueve el título hacia la izquierda para superponerse ligeramente con la celda */
+  font-size: 18px; /* Ajusta el tamaño del texto */
+  line-height: 1.2; /* Ajusta el espaciado entre líneas */
+  font-weight: bold; /* Ajusta el peso del texto a negrita */
+  display: flex; /* Permite alinear verticalmente la imagen o el icono */
+  align-items: center; /* Alinea verticalmente la imagen o el icono */
+
+}
+
+input[type="text"] {
+  width: calc(100% - 20px); /* El texto ocupa todo el ancho disponible dentro de la celda, restando el espacio para el padding */
+  height: 30px; /* Altura fija para el cuadro de texto */
+  box-sizing: border-box; /* Incluye el borde en el tamaño total del cuadro de texto */
+}
+
+.search-bar input[type="text"] {
+  width: calc(95% - 20px); /* Ancho del cuadro de texto ajustado */
+  margin-left:  00px; /* Mover la barra de búsqueda más a la izquierda */
+}
+.search-bar {
+  flex: 8; /* Hace que la barra de búsqueda ocupe todo el espacio disponible */
+  margin-left: -1000; 
 }
