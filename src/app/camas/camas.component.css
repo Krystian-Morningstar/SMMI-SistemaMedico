@@ -5,48 +5,7 @@ body {
     padding: 0;
   }
   
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fdfdfd; /* Cambio de color a azul más intenso */
-    color: #000000; /* Texto en color blanco para mayor contraste */
-    padding: 5px 20px; /* Ajuste de padding */
-    border-radius: 20px; /* Hace los bordes redondeados */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Agrega una sombra para un efecto más tridimensional */
-  }
-  
-  .left-logo img {
-    max-height: 40px; /* Mantenemos la altura máxima */
-    border-radius: 70%; /* Hacemos que la imagen sea circular */
-  
-  }
-  .logo-title {
-    font-size: 24px; /* Tamaño de las siglas */
-    font-weight: bold; /* Negrita para resaltar */
-    margin-right: 70px; /* Reducir el espacio entre el título y la barra de búsqueda */
-  }
-  
-  
-  
-  .right-buttons {
-    text-align: right;
-  }
-  
-  .right-buttons button {
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
-    margin-left: 10px;
-    padding: 8px;
-    border: none;
-    border-radius: 4px
-  }
-  
-  .right-buttons button:hover {
-    background-color: #afcbe9;
-  }
-  
+ 
 
   .habitaciones {
     display: grid;
@@ -64,7 +23,7 @@ body {
     position: relative;
     max-width: 250px;
     height: 150px;
-    background-color: rgb(0, 132, 255);
+    background-color: rgb(94, 92, 92);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
@@ -75,7 +34,7 @@ body {
   }
   
   .habitaciones button:hover {
-    background-color: rgb(139, 199, 255);
+    background-color: rgb(235, 235, 243);
   }
 
 
@@ -98,7 +57,7 @@ body {
   height: 95%;
   padding: 0px 18px;
   color: #ffffff;
-  background-color: rgba(0, 166, 255, 0.209);
+  background-color: rgba(40, 41, 41, 0.209);
   font-weight: 550;
   margin: 0;
   font-size: 23px;
@@ -111,7 +70,7 @@ body {
   height: 65%;
   padding: 0px 18px;
   box-sizing: border-box;
-  color: rgba(19, 101, 135, 1);
+  color: rgb(70, 68, 68);
   background-color: rgba(255, 255, 255, 0.572);
   font-weight: 700;
   font-size: 12px;

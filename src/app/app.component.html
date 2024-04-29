@@ -1,2 +1,7 @@
-
-<app-principal></app-principal>
+<section class="contenedor">
+    <app-navbar class="navbar"></app-navbar>
+</section>
+<section>
+    <app-camas *ngIf="mostrar"></app-camas>
+    <router-outlet></router-outlet>
+</section>

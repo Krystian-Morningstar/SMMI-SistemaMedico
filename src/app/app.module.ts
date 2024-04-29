@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router'; // Importa RouterModule
-
+import { NavbarComponent} from './navbar/navbar.component'; // Importa el componente principal 
 import { AppComponent } from './app.component';
 import { PrincipalComponent } from '../app/principal/principal.component';
 import { CamasComponent } from './camas/camas.component';
@@ -13,7 +13,9 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     PrincipalComponent,
     CamasComponent,
-    IncidenciasComponent
+    IncidenciasComponent,
+    NavbarComponent,
+
   ],
   imports: [
     BrowserModule,

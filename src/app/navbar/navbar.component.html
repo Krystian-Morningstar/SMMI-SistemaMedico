@@ -1,0 +1,27 @@
+<div class="Navegador">
+      <div class="Logo_Pagina">
+        <img src="../../assets/logo.jpg" alt="logo"  />
+      </div>
+  
+      <div class="Nombre_Pagina">
+        <h2>SMMI</h2> 
+      </div>
+      <div class="Barra_Busqueda">
+        <input type="text" placeholder="   Buscar...">
+        <button (click)="mostrarAlarma()" type="button">Buscar</button>
+      </div>
+  
+      <div class="Opciones_Rutas">
+        <nav class="Rutas_Navegacion_Listado">
+          <button routerLink="/incidencias" type="button">
+            <img src="../../assets/registro.png" alt="logo"  />
+          </button>
+          <button routerLink="/inicio"type="button">
+            <img src="../../assets/home.png" alt="home"  />
+          </button>
+          <button (click)="mostrarMenu()" id="btnUsuario" type="button" >
+            <img src="../../assets/usuario.png" alt="usuario"  />
+          </button>
+        </nav>
+      </div>
+    </div>
