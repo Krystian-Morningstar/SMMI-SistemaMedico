@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { infoPaciente_interface } from '../models/infoPaciente.model';
 
 @Component({
   selector: 'app-principal',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./principal.component.css']
 })
 export class PrincipalComponent {
-  title = 'Doctor';
+  
 }

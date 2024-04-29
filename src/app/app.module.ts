@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PrincipalComponent } from '../app/principal/principal.component';
 import { CamasComponent } from './camas/camas.component';
 import { IncidenciasComponent } from './incidencias/incidencias.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { IncidenciasComponent } from './incidencias/incidencias.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([]) // Importa RouterModule.forRoot() y configura las rutas
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

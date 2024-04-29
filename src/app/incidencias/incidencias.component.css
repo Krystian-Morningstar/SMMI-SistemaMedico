@@ -1,102 +1,138 @@
-
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fdfdfd;
-    color: #000000;
-    padding: 10px 20px;
-    border-radius: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  .logo img {
-    max-height: 40px;
-    border-radius: 50%; /* Hace que el logo sea redondeado */
-    margin-right: 10px; /* Espacio entre el logo y el texto */
-  }
-  
-  .logo-title {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .right-section button {
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
-    margin-left: 10px;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 4px;
-  }
-  
-  .right-section button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Estilos para los divs en row */
-  .row-container {
-    display: flex;
-    margin-top: 30px;
-  }
-  
-  .column {
-    flex: 1; /* Los divs ocupan el mismo espacio dentro del contenedor */
-    margin: 10px; /* Espacio entre los divs */
-    padding: 20px; /* Añade espacio alrededor del contenido */
-    border-radius: 10px; /* Borde redondeado */
-  }
-  
-  .column:nth-child(odd) {
-    background-color: #ebebeb; /* Color de fondo para la primera columna */
-  }
-  
-  .column:nth-child(even) {
-    background-color: #ebebeb; /* Color de fondo para la segunda columna */
-  }
-  
-  /* Estilos para el Flabel */
-  .Flabel {
-    background-image: url('../../assets/hospital.jpg'); /* Cambia esta URL por la de tu imagen de fondo */
-    background-size: cover;
-    padding: 20px;
-    border-radius: 10px;
-    margin: -20px; /* Ajusta el margen para compensar el padding */
-    width: calc(93.5% + 40px); /* Ancho igual al 100% más el doble del padding horizontal */
-    height: 15px; /* Altura deseada del Flabel */
-    display: flex; /* Utiliza flexbox para alinear los elementos */
-    justify-content: space-between; /* Espacia los elementos dentro del Flabel */
-    align-items: center; /* Centra verticalmente los elementos */
-  }
-  .Flabel p {
-    font-size: 18px;
-    font-weight: bold;
-    color: white;}
-  
-    .Flabel button {
-      background-color: rgba(172, 172, 172, 0.7); /* Fondo semi transparente */
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-    
-  
-  .Flabel button:hover {
-    background-color: #0056b3;
-  }
-  label {
-    font-family: "Times New Roman", serif; /* Cambia la fuente del texto */
-    font-size: 25px; /* Tamaño de fuente */
-    font-weight: bold; /* Peso de la fuente */
-    color: #fffefe; /* Cambia el color del texto a rojo */
-  }
-  .column div {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif; /* Tipo de letra */
-    font-size: 16px; /* Tamaño de fuente */
-    color: #5c94fd; /* Color de texto */
-    margin-bottom: 5px; /* Margen inferior entre elementos */
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdfdfd; /* Cambio de color a azul más intenso */
+  color: #000000; /* Texto en color blanco para mayor contraste */
+  padding: 5px 20px; /* Ajuste de padding */
+  border-radius: 20px; /* Hace los bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Agrega una sombra para un efecto más tridimensional */
+}
+
+.left-logo img {
+  max-height: 40px; /* Mantenemos la altura máxima */
+  border-radius: 70%; /* Hacemos que la imagen sea circular */
+}
+
+.logo-title {
+  font-size: 24px; /* Tamaño de las siglas */
+  font-weight: bolder; /* Negrita para resaltar */
+  margin-right: 1000px;
+}
+
+.right-buttons {
+  text-align: right;
+}
+
+.right-buttons button {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+.right-buttons button:hover {
+  background-color: #afcbe9;
+}
+
+
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  height: 65vh;
+  width: 32vw;
+  box-shadow: 0px -2px 10px -5px rgba(0, 0, 0, 0.1),
+    0px 8px 15px -5px rgba(0, 0, 0, 0.1);
+  margin: 90px 3%;
+  color: #136587;
+  padding: 2rem;
+}
+
+.form {
+  display: grid;
+  grid-template-areas: repeat(3, 1fr);
+  grid-template-areas: "fila0" "fila1";
+  padding: 0;
+  margin: 0;
+}
+
+.fila0 {
+  grid-area: fila0;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 110px;
+  position: relative;
+}
+.fila1 {
+  grid-area: fila1;
+}
+h4 {
+  margin-bottom: 0;
+  margin-top: 0;
+  color: #008ec8;
+  font-size: 13px;
+  text-align: justify;
+}
+p {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: 14px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #008ec8;
+}
+
+
+button:hover {
+  background-color: #77d8ff;
+}
+.historial{
+    max-height: 57vh; 
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.tarjeta {
+  background: rgba(54, 190, 245, 0.11);
+  border-radius: 15px;
+  padding: 4% 8%;
+  display: grid;
+  grid-template-areas: repeat(2, 1fr);
+  grid-template-areas: "hora" "resto";
+  margin: 3%;
+}
+.hora {
+  grid-area: hora;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  position: relative;
+  gap: 30%;
+}

@@ -47,54 +47,94 @@ body {
     background-color: #afcbe9;
   }
   
-  .tabla {
-    width: 1250px; /* Ancho total de la tabla */
-    margin: 20px auto; /* Centra la tabla horizontalmente */
-    overflow: hidden; /* Para limpiar el float */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+
+  .habitaciones {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    justify-content: left;
+    align-items: center;
+    grid-gap: 0px 20px;
+    margin: 0 auto;
+    max-width: 82%;
+    margin-top: 80px;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+  .habitacion {
+    position: relative;
+    max-width: 250px;
+    height: 150px;
+    background-color: rgb(0, 132, 255);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    border: hidden;
+    text-align: left;
+    margin: 10px 0;
+    cursor: pointer;
   }
   
-  .celda {
-    width: calc(25% - 20px); /* Ancho fijo de cada celda (25% del ancho total menos el espacio para márgenes) */
-    height: 250px; /* Altura fija de cada celda */
-    background-color: #f0f0f0;
-    margin: 10px;
-    border: 1px solid #ccc;
-    text-align: center; /* Centra el texto dentro de la celda */
-    box-sizing: border-box; /* Incluye el borde en el tamaño total de la celda */
-    padding: 10px; /* Espacio interno dentro de la celda */
+  .habitaciones button:hover {
+    background-color: rgb(139, 199, 255);
   }
-  
-  .titulo {
-    background-image: url('../../assets/fondo1.jpeg'); /* Agrega la imagen de fondo */
-    background-size: cover; /* Ajusta el tamaño de la imagen para que cubra todo el área del título */
-    color: #fff; /* Texto en color blanco para mayor contraste */
-    padding: 15px 40px 15px 15px; /* Ajuste de padding para dejar espacio para una imagen o un icono a la izquierda */
-    border-radius: 5px; /* Hace los bordes redondeados */
-    width: calc(110% - 55px); /* Hace que el título abarque todo el ancho de la celda menos el espacio para la imagen o el icono y el padding */
-    margin-top: -15px; /* Mueve el título hacia arriba para superponerse ligeramente con la celda */
-    margin-left: -15px; /* Mueve el título hacia la izquierda para superponerse ligeramente con la celda */
-    font-size: 18px; /* Ajusta el tamaño del texto */
-    line-height: 1.2; /* Ajusta el espaciado entre líneas */
-    font-weight: bold; /* Ajusta el peso del texto a negrita */
-    display: flex; /* Permite alinear verticalmente la imagen o el icono */
-    align-items: center; /* Alinea verticalmente la imagen o el icono */
-  
+
+
+
+  .imagen {
+    width: 250px;
+    height: 200px;
+    opacity: 0.4;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
-  
-  input[type="text"] {
-    width: calc(100% - 20px); /* El texto ocupa todo el ancho disponible dentro de la celda, restando el espacio para el padding */
-    height: 30px; /* Altura fija para el cuadro de texto */
-    box-sizing: border-box; /* Incluye el borde en el tamaño total del cuadro de texto */
-  }
-  
-  .search-bar input[type="text"] {
-    width: calc(95% - 20px); /* Ancho del cuadro de texto ajustado */
-    margin-left:  00px; /* Mover la barra de búsqueda más a la izquierda */
-  }
-  .search-bar {
-    flex: 8; /* Hace que la barra de búsqueda ocupe todo el espacio disponible */
-    margin-left: -1000; 
-  }
+
+
+.titulo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 95%;
+  padding: 0px 18px;
+  color: #ffffff;
+  background-color: rgba(0, 166, 255, 0.209);
+  font-weight: 550;
+  margin: 0;
+  font-size: 23px;
+}
+.contenido {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  padding: 0px 18px;
+  box-sizing: border-box;
+  color: rgba(19, 101, 135, 1);
+  background-color: rgba(255, 255, 255, 0.572);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.contenido h2 {
+  margin-top: 0;
+}
+
+.contenido ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contenido ul li {
+  padding: 3px 0;
+}
+
+.search-bar input[type="text"] {
+  width: calc(95% - 20px); /* Ancho del cuadro de texto ajustado */
+  margin-left:  00px; /* Mover la barra de búsqueda más a la izquierda */
+}
+.search-bar {
+  flex: 8; /* Hace que la barra de búsqueda ocupe todo el espacio disponible */
+  margin-left: -1000; 
+}

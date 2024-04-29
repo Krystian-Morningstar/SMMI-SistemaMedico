@@ -10,7 +10,7 @@
   <div class="navbar">
     <div class="left-content">
       <div class="left-logo">
-        <img src="../assets/fondo1.jpeg" alt="Logo">
+        <img src="../../assets/logo.jpg" alt="Logo">
       </div>
     </div>
     <div class="logo-title">SMMI</div>
@@ -19,47 +19,36 @@
     </div>
     <div class="right-buttons">
       <button><i class="fas fa-plus"></i></button>
+      
+      <nav class="Rutas_Navegacion_Listado">
+        <button routerLink="/principal" type="button"></button></nav>
+      <button routerLink="/principal" type="button"></button>
+      <button (click)="abrirDetalleHabitacion()">Abrir Nueva Ventana</button>
       <button><i class="fas fa-home"></i></button>
       <button><i class="fas fa-user"></i></button>
     </div>
   </div>
 
-  <div class="tabla">
-      <div class="celda">
-          <div class="titulo">Título 1</div>
-          <input type="text" value="Texto 1">
+  <div class="habitaciones">
+    <button routerLink="/habitacion" class="habitacion" *ngFor="let habitacion of habitaciones">
+      <div class="imagen">
+        <img
+          src="../../assets/habitacion.jpg"
+          alt="Habitación 1"
+        />
       </div>
-      <div class="celda">
-          <div class="titulo">Título 2</div>
-          <input type="text" value="Texto 2">
+      <div class="titulo">
+        <p>{{ habitacion.titulo }}</p>
       </div>
-      <div class="celda">
-          <div class="titulo">Título 3</div>
-          <input type="text" value="Texto 3">
+      <div class="contenido">
+        <div class="signos">
+          <ul>
+            <li>Temperatura: {{ habitacion.temperatura }}</li>
+            <li>Oxigeno: {{ habitacion.oxigeno }}</li>
+            <li>Presión: {{ habitacion.presion }}</li>
+            <li>Ritmo cardiaco: {{ habitacion.ritmoCardiaco }}</li>
+          </ul>
+        </div>
       </div>
-      <div class="celda">
-          <div class="titulo">Título 4</div>
-          <input type="text" value="Texto 4">
-      </div>
-      <div class="celda">
-          <div class="titulo">Título 5</div>
-          <input type="text" value="Texto 5">
-      </div>
-      <div class="celda">
-          <div class="titulo">Título 6</div>
-          <input type="text" value="Texto 6">
-      </div>
-      <div class="celda">
-          <div class="titulo">Título 7</div>
-          <input type="text" value="Texto 7">
-      </div>
-      <div class="celda">
-          <div class="titulo">Título 8</div>
-          <input type="text" value="Texto 8">
-      </div>
-      <!-- Agrega 8 cuadros más -->
+    </button>
   </div>
-
-</body>
-</html>
-
