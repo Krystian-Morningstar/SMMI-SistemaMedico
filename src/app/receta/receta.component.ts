@@ -1,23 +1,19 @@
 import { Component } from '@angular/core';
-import { infoPaciente_interface } from '../models/infoPaciente.model';
+import { CrearReceta_interface } from '../models/CrearReceta.model';
 
 @Component({
   selector: 'app-incidencias',
-  templateUrl: './incidencias.component.html',
-  styleUrls: ['./incidencias.component.css']
+  templateUrl: './receta.component.html',
+  styleUrls: ['./receta.component.css']
 })
-export class IncidenciasComponent {
+export class RecetaComponent {
   title = 'Doctor';
-  informacionPaciente: infoPaciente_interface = {
-    nombre: 'nombre',
-    edad: 'edad',
-    sexo: 'sexo',
-    padecimientos: 'padecimientos',
-    alergias: 'alergias',
-    causaIngreso: 'causaIngreso',
-    enfermera: 'enfermera',
-    especialidad: 'especialidad',
-  };
+  CrearReceta:  CrearReceta_interface= {
+    Nombre: 'nombre',
+    Fecha: '12/12/12',
+    Medicamentos: 'Medicamentos',
+    Indicaciones_adicionales: 'indicaciones'
+  }  ;
     
   
 
