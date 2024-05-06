@@ -7,6 +7,9 @@ import { PrincipalComponent } from '../app/principal/principal.component';
 import { CamasComponent } from './camas/camas.component';
 import { IncidenciasComponent } from './incidencias/incidencias.component';
 import { AppRoutingModule } from './app-routing.module';
+import { Login2Component } from './login2/login2.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,11 +18,14 @@ import { AppRoutingModule } from './app-routing.module';
     CamasComponent,
     IncidenciasComponent,
     NavbarComponent,
+    Login2Component,
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

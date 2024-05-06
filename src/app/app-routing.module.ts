@@ -5,8 +5,10 @@
   import { PerfilComponent} from './perfil/perfil.component'; // Importa el componente principal 
   import { IncidenciasComponent} from './incidencias/incidencias.component'; // Importa el componente principal 
   import { RecetaComponent} from './receta/receta.component'; // Importa el componente principal 
+  import { Login2Component} from './login2/login2.component'; // Importa el componente principal 
+  import { LoginComponent} from './login/login.component'; // Importa el componente principal 
   const routes: Routes = [
-  { path: '', component: CamasComponent }, 
+  { path: '', component: LoginComponent }, 
   {path:"perfil", component: PerfilComponent},
   { path: 'principal', component: PrincipalComponent },
   { path: 'navar', component: PrincipalComponent },
