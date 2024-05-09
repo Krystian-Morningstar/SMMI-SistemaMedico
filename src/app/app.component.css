@@ -1,0 +1,19 @@
+body {
+    margin: 0; 
+  }
+  
+
+.contenedor{
+    height: 100vh;
+    background: linear-gradient(to bottom, #ffffff, rgb(219, 227, 230)); 
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+.navbar{
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    top: 0;
+}

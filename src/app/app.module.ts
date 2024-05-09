@@ -1,39 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router'; // Importa RouterModule
-import { NavbarComponent} from './navbar/navbar.component'; // Importa el componente principal 
-import { AppComponent } from './app.component';
-import { PrincipalComponent } from '../app/principal/principal.component';
-import { CamasComponent } from './camas/camas.component';
-import { IncidenciasComponent } from './incidencias/incidencias.component';
 import { AppRoutingModule } from './app-routing.module';
-import { Login2Component } from './login2/login2.component';
-import { FormsModule } from '@angular/forms';
+import { AppComponent } from './app.component';
+import { InicioComponent } from './views/inicio/inicio.component';
+import { NavbarComponent } from './views/navbar/navbar.component';
+import { PerfilComponent } from './views/perfil/perfil.component';
+import { RegistroComponent } from './views/registro/registro.component';
+import { AlertaComponent } from './views/alerta/alerta.component';
+import { HabitacionComponent } from './views/habitacion/habitacion.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common'; // Importa CommonModule
-import { RECETAComponent } from './RECETA/RECETA.component';
-import { PerfilComponent } from './perfil/perfil.component';
-
+import { FormsModule } from '@angular/forms';
+import { Login2Component } from './views/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PrincipalComponent,
-    CamasComponent,
-    IncidenciasComponent,
+    InicioComponent,
     NavbarComponent,
-    Login2Component,
-    RECETAComponent,
     PerfilComponent,
-
-
+    RegistroComponent,
+    AlertaComponent,
+    HabitacionComponent,
+    Login2Component,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     HttpClientModule,
-    CommonModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

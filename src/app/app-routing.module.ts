@@ -1,25 +1,27 @@
-  import { NgModule } from '@angular/core';
-  import { RouterModule, Routes } from '@angular/router';
-  import { PrincipalComponent} from './principal/principal.component'; // Importa el componente principal
-  import { CamasComponent} from './camas/camas.component'; // Importa el componente principal 
-  import { PerfilComponent} from './perfil/perfil.component'; // Importa el componente principal 
-  import { IncidenciasComponent} from './incidencias/incidencias.component'; // Importa el componente principal 
-  import { Login2Component} from './login2/login2.component'; // Importa el componente principal 
-  import { LoginComponent} from './login/login.component'; // Importa el componente principal 
-  import { RECETAComponent} from './RECETA/RECETA.component'; // Importa el componente principal 
-  const routes: Routes = [
-  { path: '', component: Login2Component }, 
-  {path:"perfil", component: PerfilComponent},
-  { path: 'principal', component: PrincipalComponent },
-  { path: 'navar', component: PrincipalComponent },
-  { path: 'inicio', component: CamasComponent }, 
-  { path: 'incidencias', component: IncidenciasComponent },
-  { path: 'RECETA', component: RECETAComponent},
-  
-  ];
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { PerfilComponent } from './views/perfil/perfil.component';
+import { InicioComponent } from './views/inicio/inicio.component';
+import { HabitacionComponent } from './views/habitacion/habitacion.component';
+import { RegistroComponent } from './views/registro/registro.component';
+import { AlertaComponent } from './views/alerta/alerta.component';
+import { Login2Component } from './views/login/login.component';
+import { authGuard } from './auth.guard';
 
-  @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
-  })
-  export class AppRoutingModule { }
+const routes: Routes = [
+  {path:"perfil", component: PerfilComponent, canActivate: [authGuard] },
+  { path: 'inicio', component: InicioComponent,  canActivate: [authGuard] },
+  { path: 'habitacion', component: HabitacionComponent,  canActivate: [authGuard]  },
+  { path: 'registro', component: RegistroComponent,  canActivate: [authGuard]  },
+  { path: 'alerta', component: AlertaComponent,  canActivate: [authGuard]  },
+  { path: 'login', component: Login2Component },
+  { path: '', redirectTo: '/inicio', pathMatch: 'full' }, // Redirige la ruta raíz a '/home'
+  { path: '**', redirectTo: '/inicio' } // Redirige cualquier ruta no reconocida a '/home'
+
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

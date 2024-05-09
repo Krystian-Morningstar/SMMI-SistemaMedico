@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tarjetas de Habitación</title>
+  </head>
+  <body>
+    <div class="habitaciones">
+      <button (click)="seleccionarHabitacion(habitacion)" class="habitacion" *ngFor="let habitacion of habitaciones">
+        <div class="imagen">
+          <img
+            src=".\assets\images\habitacion.jpg"
+            alt="Habitación 1"
+          />
+        </div>
+        <div class="titulo">
+          <p>Habitación {{ habitacion.habitacion.id_habitacion.id_habitacion }}</p>
+        </div>
+        <div class="contenido">
+          <div class="signos">
+            <ul>
+              <li>Temperatura: {{ habitacion.temperatura }}</li>
+              <li>Oxigeno: {{ habitacion.oxigeno }}</li>
+              <li>Presión: {{ habitacion.presion }}</li>
+              <li>Ritmo cardiaco: {{ habitacion.ritmoCardiaco }}</li>
+            </ul>
+          </div>
+        </div>
+      </button>
+    </div>
+  </body>
+</html>
