@@ -34,25 +34,10 @@ ngOnInit(): void {
   });
 }
 
-  async alta(){
-    const confirmacion = window.confirm("¿Estás seguro de realizar esta acción?");
-    if (confirmacion) {
-      try {
-        await this.habitacioneService.alta(this.idIngreso).toPromise();
-      } catch (error) {
-        console.error('Error al realizar la solicitud:', error);
-      }
-            this.mensaje = "Acción realizada correctamente."; 
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      this.router.navigate(['/inicio']);
-    } else {
-      this.mensaje = "Acción cancelada."; 
-      setTimeout(() => {
-        this.mensaje = ''; 
-      }, 1500);
+   alta(){
+      this.router.navigate(['/receta']);
     }
 
-  }
   informacionPaciente: registro_Interface = {
     nombres: '',
     apellidos: '',

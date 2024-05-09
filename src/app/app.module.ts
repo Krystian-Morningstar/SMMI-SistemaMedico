@@ -11,6 +11,7 @@ import { HabitacionComponent } from './views/habitacion/habitacion.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Login2Component } from './views/login/login.component';
+import { RECETAComponent } from './views/RECETA/RECETA.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { Login2Component } from './views/login/login.component';
     AlertaComponent,
     HabitacionComponent,
     Login2Component,
+    RECETAComponent
   ],
   imports: [
     BrowserModule,

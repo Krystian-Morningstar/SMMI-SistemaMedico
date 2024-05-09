@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent,  canActivate: [authGuard]  },
   { path: 'alerta', component: AlertaComponent,  canActivate: [authGuard]  },
   { path: 'login', component: Login2Component },
+  { path: 'receta', component: RegistroComponent,  canActivate: [authGuard]},
   { path: '', redirectTo: '/inicio', pathMatch: 'full' }, // Redirige la ruta raíz a '/home'
   { path: '**', redirectTo: '/inicio' } // Redirige cualquier ruta no reconocida a '/home'
 
