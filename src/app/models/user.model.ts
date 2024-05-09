@@ -1,5 +1,5 @@
 export interface Usuario {
+  [x: string]: any;
   matricula: string;
-  password: string;
-
+  contraseña: string;
 }

@@ -1,6 +1,7 @@
 <section class="contenedor">
-    <app-navbar *ngIf="mostrar"></app-navbar>
-</section>
-<section>
-    <router-outlet></router-outlet>
+    <app-navbar *ngIf="mostrarNavar"></app-navbar>
+    <section>
+        <app-perfil *ngIf="mostrar"></app-perfil>
+        <router-outlet></router-outlet>
+    </section>
 </section>

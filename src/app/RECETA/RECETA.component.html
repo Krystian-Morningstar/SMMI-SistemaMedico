@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body> 
+  <div class="container">
+    <div class="fila0">
+      <h1>Receta Medica</h1>
+      <button routerLink="/incidencias">Guardar</button>
+    </div>
+    <div class="form">
+      <section class="fila1">
+        <hr>
+        <h4>Nombre:</h4>
+        <p>{{Receta.Nombre}}</p>
+        <h4>Fecha:</h4>
+        <p>{{Receta.Fecha}}</p>
+        <h4>Medicamentos:</h4>
+        <!-- Reemplaza el <p> con un <textarea> -->
+        <textarea rows="4" cols="50">{{Receta.Medicamentos}}</textarea>
+        <h4>Indicaciones adicionales:</h4>
+        <!-- Reemplaza el <p> con un <textarea> -->
+        <textarea rows="4" cols="50">{{Receta.Indicaciones_adicionales}}</textarea>
+      </section>
+    </div>
+  </div>
+  <body class="body2">
+  <div class="container2">
+    <div class="back2">
+      <h1>Habitacion : sensores </h1>
+      <button routerLink="/incidencias">Guardar</button>
+    </div>
+    <div class="historial2">
+      <section class="tarjeta "  *ngFor="let signos of SignosVitales">
+        <section class="hora2">
+          <div>
+            <h4>Ritmo cardiaco:</h4>
+            <input type="number">
+            <p>{{ signos.ritmoCardiaco }}</p>
+          </div>
+          <div>
+            <h4>Presión:</h4>
+            <input type="number">
+            <p>{{ signos.presion }}</p>
+          </div>
+       
+        <h4>Temperatura:</h4>
+        <input type="number">
+        <p>{{ signos.temperatura }}</p>
+      </section>
+      </section>
+    </div>
+  </div>
+  <div class="container3">
+    <section class="registro">
+      
+    </section>
+    <div class="historial">
+      <section class="tarjeta "  *ngFor="let informacio of  informacionPaciente ">
+        <section class="hora">
+          <div>
+            <h4>sexo:</h4>
+            <p>{{ informacio.sexo }}</p>
+          </div>
+          <div>
+            <h4>edad:</h4>
+            <p>{{ informacio.edad }}</p>
+          </div>
+        </section>
+        <hr>
+        <h4>Padecimientos:</h4>  
+        <p>{{informacio.padecimientos}}</p>
+        <h4>Alergias:</h4>
+        <p>{{informacio.alergias}}</p>
+        <h4>Causa de Ingreso:</h4>
+        <p>{{informacio.causaIngreso}}</p>
+        <h4>Enfermera Asignada:</h4>
+        <p>{{informacio.enfermera}}</p>
+        <h4>Especialidad Asignada:</h4>
+        <p>{{informacio.especialidad}}</p>
+      </section>
+    </div>
+  </div>
+</body>
+</body>
+</html>

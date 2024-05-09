@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { UserService } from '../services/user.service';
-import { Usuario } from '../models/user.model';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
+import { Usuario } from 'src/app/models/user.model';
 import { Router } from '@angular/router';
 import { SistemaService } from '../services/sistema.service';
 
@@ -10,48 +10,66 @@ import { SistemaService } from '../services/sistema.service';
   styleUrls: ['./login2.component.css']
 })
 export class Login2Component {
+
+  isLoggedIn: boolean = false;
+
+  contrasena: string = "";
+  matricula: string = "";
+
   usuario: Usuario = {
-    matricula: 'E20245M',
-    password: 'segura123',
+    matricula: this.matricula,
+    contraseña: this.contrasena
   };
 
-  mostrarnavar: boolean = false;
+  actualizarUsuario() {
+    this.usuario.matricula = this.matricula
+    this.usuario.contraseña = this.contrasena
+  }
+  constructor(private userService: UserService, private router: Router, private sistema: SistemaService) { }
 
-  constructor(private userService: UserService, private router: Router, private servicio: SistemaService) {}
-
-  onSubmit() {
-    if (!this.validateMatricula(this.usuario.matricula) || !this.validatePassword(this.usuario.password)) {
-      this.showToast('errorToast');
+  async onSubmit() {
+    this.actualizarUsuario();
+    if (!this.usuario.matricula || !this.usuario.contraseña) {
+      this.showToast('blankFieldsToast');
       return;
     }
 
-    this.userService.loginUser(this.usuario)
-      .subscribe(
-        (response) => {
-          if (response.success) {
-            this.router.navigate(['/inicio']);
-          } else {
-            console.error('Error en la autenticación:', response.error);
-            this.showToast('errorToast');
-          }
-        },
-        (error) => {
-          console.error('Error en la solicitud:', error);
-          this.showToast('errorToast');
+    if (this.validateMatricula(this.usuario.matricula) && this.validatePassword(this.usuario.contraseña)) {
+      try {
+        let respuesta: any = await this.userService.loginUser(this.usuario.matricula, this.usuario.contraseña).toPromise();
+        if (respuesta.message == 'Sesion_Activa') {
+          this.showToast('successToast');
+          localStorage.setItem('token', respuesta.token);
+          localStorage.setItem('matricula', this.usuario.matricula);  
+          this.isLoggedIn = false;
+          this.router.navigate(['/inicio']);
+          this.sistema.Actualizar_navar(true);
+          return
         }
-      );
+        } catch (error) {
+          this.showToast('errorToast');
+
+          return
+        }
+      }else{
+        this.showToast('errorToast');
+
+      }
+        
   }
 
   validateMatricula(matricula: string): boolean {
     // Validar la matrícula 
-    const regex = /^A\d{2}\d{3}$/; 
+    const regex = /^E\d{5}[a-zA-Z]$/;//agregar la inicial de la matricula de tu modulo 
     return regex.test(matricula);
+    //return true;
   }
 
   validatePassword(password: string): boolean {
-    // Validar una contraseña segura
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+    // Validar  una contraseña segura
+    const regex = /^(?=.*[a-z])(?=.*\d).{8,}$/;
     return regex.test(password);
+    //return true;
   }
 
   showToast(toastId: string) {
@@ -60,16 +78,13 @@ export class Login2Component {
       toast.classList.add('show');
       setTimeout(() => {
         toast.classList.remove('show');
-      }, 3000); 
+      }, 3000);
     }
   }
 
   togglePasswordVisibility(passwordInput: HTMLInputElement) {
     passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
   }
-
-  mostrarMenu() {
-    this.mostrarnavar = !this.mostrarnavar;
-    this.servicio.Actualizar_navar(this.mostrarnavar);
-  }
 }
+
+

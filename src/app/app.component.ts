@@ -13,7 +13,8 @@ export class AppComponent {
   showAlarma = false;
   mostrar: boolean = false;
   mostrarAlarma: boolean = false;
-  mostrarNavar: boolean=false;
+  mostrarNavar: boolean = false;
+
 
 
 
@@ -37,8 +38,9 @@ export class AppComponent {
       this.mostrarAlarma = mostrarAlarma;
     });
     this.servicio.navarIn$.subscribe((mostrarNavar) => {
-      this.mostrar = mostrarNavar;
+      this.mostrarNavar = mostrarNavar;
     });
+
 
   }
 }

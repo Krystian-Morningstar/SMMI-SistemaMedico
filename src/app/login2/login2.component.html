@@ -10,26 +10,24 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body>
+<body *ngIf="!isLoggedIn">
 
     <div class="wrapper">
         <form (submit)="onSubmit()" id="loginForm">
             <h1>Iniciar Sesión</h1>
-      ¿
+            <img src="../../assets/logo.jpg" alt="logo" class="logo">
             
             <div class="input-box">
-                <input type="text" placeholder="Matricula" required [(ngModel)]="usuario.matricula" name="matricula">
+                <input type="text" placeholder="Matricula" required [(ngModel)]="matricula" name="matricula">
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="contraseña" required [(ngModel)]="usuario.password" name="contraseña" #passwordInput>
+                <input type="password" placeholder="Contraseña" required [(ngModel)]="contrasena" name="password" #passwordInput>
                 <button type="button" class="toggle-password" (click)="togglePasswordVisibility(passwordInput)">
-                    <i class="bx" [ngClass]="{'bxs-hide': passwordInput.type === 'text', 'bxs-show': passwordInput.type === 'contraseña'}"></i>
+                    <i class="bx" [ngClass]="{'bxs-hide': passwordInput.type === 'text', 'bxs-show': passwordInput.type === 'password'}"></i>
                 </button>
             </div>
-
-            <button (click)="mostrarMenu()" type="submit" class="btn">Iniciar Sesión</button>
-
+            <button type="submit" class="btn">Iniciar Sesión</button>
 
         </form>
     </div>

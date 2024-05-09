@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Usuario } from '../models/user.model';
 import { of } from 'rxjs';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +12,17 @@ export class UserService {
    private apiUrl = 'https://smmi-api-production.up.railway.app/api/auth/login'; // Reemplaza 'URL_DEL_API' con la URL de tu API
 
    constructor(private http: HttpClient) {}
+   headers= new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
 
-   loginUser(usuario: Usuario): Observable<any> {
-     return this.http.post<any>(`${this.apiUrl}/login`, usuario);
+  option = {headers: this.headers}
+
+   loginUser(matricula: string, contraseña: string): Observable<any> {
+    return this.http.post<string>(this.apiUrl,{matricula, contraseña});
+  }
    }
- }
+ 
 
  //Para Prueba Local..
 // export class UserService {

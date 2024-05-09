@@ -4,17 +4,18 @@
   import { CamasComponent} from './camas/camas.component'; // Importa el componente principal 
   import { PerfilComponent} from './perfil/perfil.component'; // Importa el componente principal 
   import { IncidenciasComponent} from './incidencias/incidencias.component'; // Importa el componente principal 
-  import { RecetaComponent} from './receta/receta.component'; // Importa el componente principal 
   import { Login2Component} from './login2/login2.component'; // Importa el componente principal 
   import { LoginComponent} from './login/login.component'; // Importa el componente principal 
+  import { RECETAComponent} from './RECETA/RECETA.component'; // Importa el componente principal 
   const routes: Routes = [
-  { path: '', component: LoginComponent }, 
+  { path: '', component: Login2Component }, 
   {path:"perfil", component: PerfilComponent},
   { path: 'principal', component: PrincipalComponent },
   { path: 'navar', component: PrincipalComponent },
   { path: 'inicio', component: CamasComponent }, 
   { path: 'incidencias', component: IncidenciasComponent },
-  { path: 'receta', component: RecetaComponent }, 
+  { path: 'RECETA', component: RECETAComponent},
+  
   ];
 
   @NgModule({

@@ -13,6 +13,7 @@ export class NavbarComponent {
 
   mostrar : boolean = false;
   mostrarAlarmaa : boolean = false;
+  mostrarnavar: boolean=false;
 
 
   mostrarMenu(){
@@ -34,4 +35,5 @@ export class NavbarComponent {
       this.servicio.Actualizar_Alerta(false);
     }
   }
+
 }
