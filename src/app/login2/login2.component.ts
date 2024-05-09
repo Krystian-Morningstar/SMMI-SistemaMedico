@@ -60,7 +60,7 @@ export class Login2Component {
 
   validateMatricula(matricula: string): boolean {
     // Validar la matrícula 
-    const regex = /^E\d{5}[a-zA-Z]$/;//agregar la inicial de la matricula de tu modulo 
+    const regex = /^M\d{5}[a-zA-Z]$/;//agregar la inicial de la matricula de tu modulo 
     return regex.test(matricula);
     //return true;
   }
