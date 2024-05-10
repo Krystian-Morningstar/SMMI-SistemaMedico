@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Receta_interface} from '../models/Receta.model';
-import { infoPaciente_interface} from '../models/infoPaciente.model';
+import { Receta_interface } from 'src/app/models/Receta.model';
 
 @Component({
   selector: 'app-incidencias',

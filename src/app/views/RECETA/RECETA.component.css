@@ -7,6 +7,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 80px;
+
 }
 
 h1 {
@@ -45,7 +47,6 @@ h1 {
   grid-template-columns: 100% auto;
   gap: 110px;
   position: absolute;
-  background-image: url('../../assets/habitacion.jpg'); /* Ruta de la imagen */
   border-radius: 10px;
   width: 505px;
   margin-top: -31px;
@@ -156,7 +157,6 @@ button:hover {
   grid-template-columns: 100% auto;
   gap: 110px;
   position: absolute;
-  background-image: url('../../assets/habitacion.jpg'); /* Ruta de la imagen */
   border-radius: 10px;
   width: 505px;
   margin-top: -31px;

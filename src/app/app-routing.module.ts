@@ -7,6 +7,7 @@ import { RegistroComponent } from './views/registro/registro.component';
 import { AlertaComponent } from './views/alerta/alerta.component';
 import { Login2Component } from './views/login/login.component';
 import { authGuard } from './auth.guard';
+import { RECETAComponent } from './views/RECETA/RECETA.component';
 
 const routes: Routes = [
   {path:"perfil", component: PerfilComponent, canActivate: [authGuard] },
@@ -15,7 +16,7 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent,  canActivate: [authGuard]  },
   { path: 'alerta', component: AlertaComponent,  canActivate: [authGuard]  },
   { path: 'login', component: Login2Component },
-  { path: 'receta', component: RegistroComponent,  canActivate: [authGuard]},
+  { path: 'receta', component: RECETAComponent,  canActivate: [authGuard]},
   { path: '', redirectTo: '/inicio', pathMatch: 'full' }, // Redirige la ruta raíz a '/home'
   { path: '**', redirectTo: '/inicio' } // Redirige cualquier ruta no reconocida a '/home'
 
