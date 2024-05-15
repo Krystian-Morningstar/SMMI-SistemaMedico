@@ -28,7 +28,7 @@ h1 {
   margin: 90px 3%;
 
   padding: 2rem;
-  margin-top: -180px;
+  margin-top: -80px;
 }
 
 .form {
@@ -46,13 +46,14 @@ h1 {
   align-items: center; /* Centramos verticalmente los elementos */
   grid-template-columns: 100% auto;
   gap: 110px;
-  position: absolute;
+  position: relative;
+  background-image: url('../../../assets/images/habitacion.jpg'); /* Ruta de la imagen */
   border-radius: 10px;
   width: 505px;
   margin-top: -31px;
   right: auto;
   left: 0; 
-  margin-left: 180px; 
+  margin-left: -30px; 
   height: 50px;
 
   
@@ -117,13 +118,13 @@ button:hover {
 
 button {
   padding: 10px 20px;
-  background-color: #6b6b6b;
+  background-color: #c0bfbf;
   color: #fff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  width: 5rem;
-  height: 50px;
+  width: 6rem;
+  height: 30px;
   position: absolute;
   right: 0;
 }
@@ -156,13 +157,14 @@ button:hover {
   align-items: center; /* Centramos verticalmente los elementos */
   grid-template-columns: 100% auto;
   gap: 110px;
-  position: absolute;
+  position: relative;
+  background-image: url('../../../assets/images/habitacion.jpg'); /* Ruta de la imagen */
   border-radius: 10px;
   width: 505px;
   margin-top: -31px;
   right: auto;
   left: 0; 
-  margin-left: 720px; 
+  margin-left: -35px; 
   height: 50px;
 
 }
@@ -193,7 +195,7 @@ button:hover {
   padding: 2rem;
   display: flex; /* Cambiamos la visualización a flex */
   flex-direction: column; /* Establecemos la dirección como columna */
-  margin-top: 5px;
+  margin-top: -250px;
 
 
 }
@@ -207,7 +209,7 @@ button:hover {
   margin: 90px 3%;
   color: #363636;
   padding: 2rem;
-  margin-top: 10px;
+  margin-top: -150px;
   flex-direction: column;
 }
 
@@ -233,11 +235,7 @@ button:hover {
   color: rgb(75, 75, 75);
 }
 
-textarea {
-  border-radius: 10px; /* Bordess redondeados */
-  resize: none; /* Evita que los usuarios puedan cambiar el tamaño */
-  padding: 8px; /* Añade espacio interno */
-}
+
 
 .historial2{
   height: 100vh; 
@@ -253,3 +251,132 @@ textarea {
   position: relative;
   gap: 30%;
 }
+
+textarea {
+  border: 1px solid #ccc; /* Añade un borde delgado */
+  border-radius: 5px; /* Redondea los bordes */
+  padding: 10px; /* Añade un poco de espacio interno */
+  font-family: Arial, sans-serif; /* Utiliza una fuente legible */
+  font-size: 14px; /* Tamaño de fuente */
+  resize: vertical; /* Permite que el área de texto se redimensione verticalmente */
+  min-height: 100px; /* Altura mínima */
+  max-width: 100%; /* Ancho máximo */
+  width: 100%; /* Ancho completo */
+  box-sizing: border-box; /* Incluye el borde en el ancho y alto total */
+  outline: none; /* Elimina el resaltado del borde al enfocar */
+}
+
+textarea:focus {
+  border-color: #66afe9; /* Cambia el color del borde al enfocar */
+}
+
+/* Opcional: Estilos adicionales para el contenedor de la etiqueta de texto */
+.label-container {
+  margin-bottom: 10px; /* Espacio entre el área de texto y la etiqueta */
+}
+
+.label-container label {
+  font-weight: bold; /* Hace que la etiqueta sea negrita */
+  display: block; /* Muestra la etiqueta en una línea separada */
+  margin-bottom: 5px; /* Espacio entre etiquetas */
+}
+
+input[type="number"] {
+  padding: 8px; /* Ajusta el espaciado interno */
+  border: 1px solid #ccc; /* Añade un borde delgado */
+  border-radius: 5px; /* Redondea los bordes */
+  font-size: 14px; /* Tamaño de fuente */
+  width: 100px; /* Ancho del input */
+  box-sizing: border-box; /* Incluye el borde en el ancho total */
+}
+
+/* Estilo para cuando el input está enfocado */
+input[type="number"]:focus {
+  outline: none; /* Elimina el resaltado al enfocar */
+  border-color: #66afe9; /* Cambia el color del borde al enfocar */
+}
+
+/* Estilo para cuando se pasa el cursor sobre el input */
+input[type="number"]:hover {
+  border-color: #999; /* Cambia el color del borde al pasar el cursor */
+}
+
+/* Estilo para los botones de incremento/decremento en los inputs de tipo número */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Elimina los botones por defecto */
+  appearance: none;
+  margin: 0; /* Asegura que no haya espacio extra alrededor de los botones */
+}
+
+input[type="text"]#fecha {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  width: 50%;
+  box-sizing: border-box;
+  outline: none;
+  margin-right: 100px;
+}
+input[type="text"]#nombre {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  width: 80%;
+  box-sizing: border-box;
+  outline: none;
+
+}
+.container2 input[type="number"]#ritmo {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  width: 30%;
+  box-sizing: border-box;
+  outline: none;
+  margin-left: 50px;
+}
+.container2 input[type="number"]#presion {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  width: 30%;
+  box-sizing: border-box;
+  outline: none;
+  margin-left: 100px;
+}
+
+.container2 input[type="number"]#temperatura {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  width: 30%;
+  box-sizing: border-box;
+  outline: none;
+  margin-left: 65px;
+}
+
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre los elementos */
+  margin-bottom: 10px; /* Espacio inferior entre grupos */
+}
+
+.input-group label {
+  min-width: 120px; /* Ajustar según sea necesario */
+}
+
+
+

@@ -11,7 +11,7 @@
     <button routerLink="/incidencias" class="habitacion" *ngFor="let habitacion of habitaciones">
       <div class="imagen">
         <img
-          src="../../assets/habitacion.jpg"
+          src="../../../assets/images/habitacion.jpg"
           alt="Habitación 1"
         />
       </div>
@@ -21,10 +21,7 @@
       <div class="contenido">
         <div class="signos">
           <ul>
-            <li>Temperatura: {{ habitacion.temperatura }}</li>
-            <li>Oxigeno: {{ habitacion.oxigeno }}</li>
-            <li>Presión: {{ habitacion.presion }}</li>
-            <li>Ritmo cardiaco: {{ habitacion.ritmoCardiaco }}</li>
+            <li>Nombre: {{ habitacion.Nombre }}</li>
           </ul>
         </div>
       </div>

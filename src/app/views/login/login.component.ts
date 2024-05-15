@@ -29,7 +29,7 @@ export class Login2Component {
   async onSubmit() {
     this.actualizarUsuario();
     if (!this.usuario.matricula || !this.usuario.contraseña) {
-      this.showToast('blankFieldsToast');
+      this.showToast('blankFieldsToast');  this.router.navigate(['/inicio']);
       return;
     }
 
@@ -57,7 +57,7 @@ export class Login2Component {
 
   validateMatricula(matricula: string): boolean {
     // Validar la matrícula 
-    const regex = /^A\d{5}[a-zA-Z]$/;
+    const regex = /^M\d{5}[a-zA-Z]$/;
     return regex.test(matricula);
     //return true;
   }

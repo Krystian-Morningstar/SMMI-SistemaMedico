@@ -17,3 +17,23 @@ body {
     left: 0;
     top: 0;
 }
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Para asegurar que cubre toda la altura de la ventana */
+    margin-top: 10px;
+    overflow: auto;
+}
+  
+.content {
+    margin-top: 80px; /* Ajusta según la altura de tu navbar */
+    flex-grow: 1;
+    overflow-y: auto; /* Permite el scroll vertical dentro del contenido principal */
+  }
+
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    overflow: hidden; /* Evitar scroll en el contenedor principal */
+  }

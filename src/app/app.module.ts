@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Login2Component } from './views/login/login.component';
 import { RECETAComponent } from './views/RECETA/RECETA.component';
+import { CamasComponent } from './views/camas/camas.component';
+import { CommonModule } from '@angular/common';
+import { IncidenciasComponent } from './views/incidencias/incidencias.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +26,16 @@ import { RECETAComponent } from './views/RECETA/RECETA.component';
     AlertaComponent,
     HabitacionComponent,
     Login2Component,
-    RECETAComponent
+    RECETAComponent,
+    CamasComponent,
+    IncidenciasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
