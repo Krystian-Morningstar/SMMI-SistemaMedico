@@ -10,28 +10,28 @@
   <div class="container">
     <div class="fila0">
       <h1>Receta Medica</h1>
-      <button routerLink="/incidencias">Guardar</button>
+      <button (click)="navegarAhistorial()">Guardar</button>
     </div>
     <div class="form">
       <section class="fila1">
         <section class="hora">
           <div>
             <label for="textarea1">Nombre:</label>
-            <p>{{Receta.Nombre}}</p>
+            <p>{{informacionPaciente.nombres}}</p>
           </div>
           <div>
             <label for="fecha">Fecha:</label>
-            <p>{{Receta.Fecha}}</p>
+            <p>{{fechaActual}}</p>
           </div>
         </section>
         <hr>
         <div class="label-container">
           <label for="medicamentos">Medicamentos:</label>
-          <textarea id="medicamentos" rows="4" cols="50">{{Receta.Medicamentos}}</textarea>
+          <textarea id="medicamentos" rows="4" cols="50">{{informacionPaciente.alergias}}</textarea>
         </div>
         <div class="label-container">
           <label for="indicaciones">Indicaciones adicionales:</label>
-          <textarea id="indicaciones" rows="4" cols="50">{{Receta.Indicaciones_adicionales}}</textarea>
+          <textarea id="indicaciones" rows="4" cols="50">{{informacionPaciente.alergias}}</textarea>
         </div>
       </section>
     </div>
@@ -40,7 +40,7 @@
     <div class="container2">
       <div class="back2">
         <h1>Habitacion : sensores</h1>
-        <button routerLink="/incidencias">Guardar</button>
+        <button (click)="navegarAhistorial()">Guardar</button>
       </div>
       <div class="historial2">
         <section class="tarjeta" *ngFor="let signos of SignosVitales">
@@ -68,37 +68,37 @@
       <section class="registro">
       </section>
       <div class="historial">
-        <section class="tarjeta" *ngFor="let informacio of informacionPaciente">
+        <section class="tarjeta" >
           <section class="hora">
             <div>
               <label for="sexo">Sexo:</label>
-              <p>{{ informacio.sexo }}</p>
+              <p>{{ informacionPaciente.sexo }}</p>
             </div>
             <div>
               <label for="edad">Edad:</label>
-              <p>{{ informacio.edad }}</p>
+              <p>{{ informacionPaciente.edad }}</p>
             </div>
           </section>
           <hr>
           <div class="label-container">
             <label for="padecimientos">Padecimientos:</label>
-            <p>{{informacio.padecimientos}}</p>
+            <p>{{informacionPaciente.padecimientos}}</p>
           </div>
           <div class="label-container">
             <label for="alergias">Alergias:</label>
-            <p>{{informacio.alergias}}</p>
+            <p>{{informacionPaciente.alergias}}</p>
           </div>
           <div class="label-container">
             <label for="causa">Causa de Ingreso:</label>
-            <p>{{informacio.causaIngreso}}</p>
+            <p>{{informacionPaciente.causa_ingreso}}</p>
           </div>
           <div class="label-container">
             <label for="enfermera">Enfermera Asignada:</label>
-            <p>{{informacio.enfermera}}</p>
+            <p>{{informacionPaciente.id_enfermera}}</p>
           </div>
           <div class="label-container">
             <label for="especialidad">Especialidad Asignada:</label>
-            <p>{{informacio.especialidad}}</p>
+            <p>{{informacionPaciente.id_especialidad}}</p>
           </div>
         </section>
       </div>

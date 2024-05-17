@@ -34,8 +34,8 @@ ngOnInit(): void {
   });
 }
 
-   alta(){
-      this.router.navigate(['/receta']);
+   Receta(){
+    this.router.navigate(['/receta'], { queryParams: { id: this.idIngreso } });
     }
 
   informacionPaciente: registro_Interface = {
