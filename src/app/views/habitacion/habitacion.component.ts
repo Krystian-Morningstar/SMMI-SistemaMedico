@@ -3,6 +3,7 @@ import { historialIncidencias_interface } from 'src/app/models/historialIncidenc
 import { ActivatedRoute, Router } from '@angular/router';
 import { HabitacionesService } from 'src/app/services/habitaciones.service';
 import { registro_Interface } from 'src/app/models/registro.model';
+import { RecetaService } from 'src/app/services/receta.service';
 
 @Component({
   selector: 'app-habitacion',
@@ -10,15 +11,20 @@ import { registro_Interface } from 'src/app/models/registro.model';
   styleUrls: ['./habitacion.component.css'],
 })
 export class HabitacionComponent {
-
-constructor(private activatedRoute: ActivatedRoute, private habitacioneService: HabitacionesService,private router: Router) {}
+  historial: any[] = []; 
+constructor(private activatedRoute: ActivatedRoute, private habitacioneService: HabitacionesService,private router: Router, private recetaservice: RecetaService) {}
 idIngreso: any
 mensaje: string = '';
 
-ngOnInit(): void {
+async ngOnInit(): Promise<void> {
   this.activatedRoute.queryParams.subscribe(params => {
     this.idIngreso= params['id'];
   });
+  await this.recetaservice.obtenerreceta(this.idIngreso).subscribe((data: any) => {
+    this.historial = data;
+    console.log('Historial de recetas:', this.historial);
+  });
+  
 
   this.habitacioneService.habitacion(this.idIngreso).subscribe((data: any) => {
     this.informacionPaciente.nombres = data.nombres;
@@ -32,6 +38,7 @@ ngOnInit(): void {
     this.informacionPaciente.id_especialidad = data.id_especialidad.nombre;
     this.informacionPaciente.id_habitacion = data.id_habitacion.id_habitacion;
   });
+  console.log('Historial de recetas:', this.historial);
 }
 
    Receta(){
@@ -78,4 +85,7 @@ ngOnInit(): void {
       accionesTomadas: 'Acciones 2',
     },
   ];
+ 
+  
+
 }

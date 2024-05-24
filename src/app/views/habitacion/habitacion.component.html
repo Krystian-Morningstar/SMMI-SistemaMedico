@@ -1,62 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario de Registro</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="form">
-        <section class="fila0">
-          <h1>Habitacion {{informacionPaciente.id_habitacion}}</h1>
-          <button (click)="Receta()">Crear Receta</button>
-        </section>
-        <section class="fila1">
-          <h4>Nombre:</h4>
-          <p>{{informacionPaciente.nombres}} {{informacionPaciente.apellidos}}</p>
-          <h4>Edad:</h4>
-          <p>{{informacionPaciente.edad}}</p>
-          <h4>Sexo:</h4>
-          <p>{{informacionPaciente.sexo}}</p>
-          <h4>Padecimientos:</h4>
-          <p>{{informacionPaciente.padecimientos}}</p>
-          <h4>Alergias:</h4>
-          <p>{{informacionPaciente.alergias}}</p>
-          <h4>Causa de ingreso:</h4>
-          <p>{{informacionPaciente.causa_ingreso}}</p>
-          <h4>Enfermera asignada:</h4>
-          <p>{{informacionPaciente.id_enfermera}}</p>
-          <h4>Especialidad asignada:</h4>
-          <p>{{informacionPaciente.id_especialidad}}</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario de Registro</title>
+</head>
+<body>
+  <div class="container">
+    <div class="form">
+      <section class="fila0">
+        <h1>Habitacion {{informacionPaciente.id_habitacion}}</h1>
+        <button (click)="Receta()">Crear Receta</button>
+      </section>
+      <section class="fila1">
+        <h4>Nombre:</h4>
+        <p>{{informacionPaciente.nombres}} {{informacionPaciente.apellidos}}</p>
+        <h4>Edad:</h4>
+        <p>{{informacionPaciente.edad}}</p>
+        <h4>Sexo:</h4>
+        <p>{{informacionPaciente.sexo}}</p>
+        <h4>Padecimientos:</h4>
+        <p>{{informacionPaciente.padecimientos}}</p>
+        <h4>Alergias:</h4>
+        <p>{{informacionPaciente.alergias}}</p>
+        <h4>Causa de ingreso:</h4>
+        <p>{{informacionPaciente.causa_ingreso}}</p>
+        <h4>Enfermera asignada:</h4>
+        <p>{{informacionPaciente.id_enfermera}}</p>
+        <h4>Especialidad asignada:</h4>
+        <p>{{informacionPaciente.id_especialidad}}</p>
+      </section>
+    </div>
+  </div>
+  
+  <body class="body2">
+    <div class="container2">
+      <div class="back2">
+        <h1>Historial de incidencias</h1>
+      </div>
+      <div class="historial">
+        <section class="tarjeta "  *ngFor="let incidencia of historialIncidencias">
+          <section class="hora">
+            <div>
+              <h4>Hora alarma:</h4>
+              <p>{{ incidencia.horaAlarma }}</p>
+            </div>
+            <div>
+              <h4>Fecha:</h4>
+              <p>{{ incidencia.fecha }}</p>
+            </div>
+          </section>
+          <h4>Evento crítico:</h4>
+          <p>{{ incidencia.eventoCritico }}</p>
+          <h4>Acciones tomadas:</h4>
+          <p>{{ incidencia.accionesTomadas }}</p>
         </section>
       </div>
     </div>
-    <div class="container">
-        <section >
-            <h1>Historial incidencias </h1>
-          </section>
-        <div class="historial">
-          <section class="tarjeta "  *ngFor="let incidencia of historialIncidencias">
-           <section class="hora">
+    
+    <div class="container3">
+      <section class="registro">
+        <h1>Historial de Recetas</h1>
+      </section>
+      <div class="historial">
+        <section class="tarjeta "  *ngFor="let historialR of historial ">
+          <section class="hora">
             <div>
-                <h4>Hora alarma:</h4>
-                <p>{{ incidencia.horaAlarma }}</p>
+              <h4>Hora alarma:</h4>
+              <p>{{ historialR.ingreso.hora_ingreso}}</p> <!-- Corregido: historial.horaAlarma -->
             </div>
             <div>
-                <h4>Fecha:</h4>
-                <p>{{ incidencia.fecha }}</p>
+              <h4>Fecha:</h4>
+              <p>{{ historialR.ingreso.fecha_ingreso}}</p>
             </div>
-           </section>
-            <h4>Evento crítico:</h4>
-            <p>{{ incidencia.eventoCritico }}</p>
-            <h4>Acciones tomadas:</h4>
-            <p>{{ incidencia.accionesTomadas }}</p>
           </section>
-        </div>
+          <h4>Doctor:</h4>
+          <p>{{historialR.medico.nombres}}</p> <!-- Ajustar al nombre de la propiedad que contiene el nombre del doctor -->
+          <h4>Medicamentos:</h4>
+          <p>{{ historialR.medicamentos}}</p> <!-- Ajustar al nombre de la propiedad que contiene los medicamentos -->
+          <h4>Indicaciones Adicionales:</h4>
+          <p>{{ historialR.indicaciones_addic }}</p> <!-- Ajustar al nombre de la propiedad que contiene las indicaciones -->
+        </section>
       </div>
-      <div class="mensaje" [class.visible]="mensaje">
-        {{ mensaje }}
-      </div>
+    </div>
   </body>
+</body>
 </html>

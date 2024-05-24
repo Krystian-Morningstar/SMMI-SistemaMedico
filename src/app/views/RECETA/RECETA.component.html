@@ -27,11 +27,11 @@
         <hr>
         <div class="label-container">
           <label for="medicamentos">Medicamentos:</label>
-          <textarea id="medicamentos" rows="4" cols="50">{{informacionPaciente.alergias}}</textarea>
+          <textarea id="medicamentos" rows="4" cols="50" [(ngModel)]="medicamentos"></textarea> 
         </div>
         <div class="label-container">
           <label for="indicaciones">Indicaciones adicionales:</label>
-          <textarea id="indicaciones" rows="4" cols="50">{{informacionPaciente.alergias}}</textarea>
+          <textarea id="indicaciones" rows="4" cols="50" [(ngModel)]="indicacionesAdicionales"></textarea> <!-- Usamos ngModel para vincular el valor de indicacionesAdicionales -->
         </div>
       </section>
     </div>
