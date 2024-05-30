@@ -3,12 +3,16 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { RecetaService } from 'src/app/services/receta.service';
 import { registro_Interface } from 'src/app/models/registro.model';
 import { HabitacionesService } from 'src/app/services/habitaciones.service';
+import { SensorConfigService } from 'src/app/services/sensor-config.service'; // Importa el servicio de configuraciones de sensores
+import { SensorConfig } from 'src/app/models/sensores.models'; // Importa el modelo de configuraciones de sensores
 
 @Component({
   selector: 'app-incidencias',
   templateUrl: './RECETA.component.html',
   styleUrls: ['./RECETA.component.css']
 })
+
+
 export class RECETAComponent implements OnInit {
   idIngreso: string = '';
   mensaje: string = '';
@@ -37,13 +41,25 @@ export class RECETAComponent implements OnInit {
       temperatura: 'x',
     },
   ];
+  oxigenacionMin: number =0;
+  oxigenacionMax: number=0;
+  frecuenciaCardiacaMin: number=0;
+  frecuenciaCardiacaMax: number=0;
+  presionSistolicaMin: number=0;
+  presionSistolicaMax: number=0;
+  presionDiastolicaMin: number=0;
+  presionDiastolicaMax: number=0;
+  temperaturaMin: number=0;
+  temperaturaMax: number=0;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private habitacioneService: HabitacionesService,
     private recetaService: RecetaService,
+    private sensorConfigService: SensorConfigService, // Inyecta el servicio de configuraciones de sensores
     private router: Router
   ) {}
+  
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(params => {
@@ -67,7 +83,6 @@ export class RECETAComponent implements OnInit {
     });
   }
 
-
   obtenerFechaActual() {
     const hoy = new Date();
     this.fechaActual = hoy.toLocaleDateString();
@@ -75,17 +90,62 @@ export class RECETAComponent implements OnInit {
 
   navegarAhistorial() {
     const recetaData = {
-      matricula_medico: 'M88345M',
+      matricula_medico: 'M98765C',
       id_ingreso: this.idIngreso,
       medicamentos: this.medicamentos,
       indicaciones_addic: this.indicacionesAdicionales,
     };
-
-    this.recetaService.crearReceta(recetaData).subscribe(() => {
+    this.recetaService.crearReceta(recetaData).subscribe(async () => {
       this.router.navigate(['/habitacion'], { queryParams: { id: this.idIngreso } });
+      await this.enviarConfiguracionesSensores()
     }, error => {
       console.error('Error al guardar la receta:', error);
       this.errorMessage = `Error al guardar la receta: ${error}`;
     });
+    
+  }
+
+   async enviarConfiguracionesSensores() {
+    console.log("enviarconfiguracionessensores")
+    const config: SensorConfig[] = [
+      {
+        max_valor: this.oxigenacionMax,
+        min_valor: this.oxigenacionMin,
+        topico_sensor: "/oxig"
+      },
+      {
+        max_valor: this.frecuenciaCardiacaMax,
+        min_valor: this.frecuenciaCardiacaMin,
+        topico_sensor: "/freqCard"
+      },
+      {
+        max_valor: this.presionSistolicaMax,
+        min_valor: this.presionSistolicaMin,
+        topico_sensor: "/presArtsist"
+      },
+      {
+        max_valor: this.presionDiastolicaMax,
+        min_valor: this.presionDiastolicaMin,
+        topico_sensor: "/presArtdiast"
+      },
+      {
+        max_valor: this.temperaturaMax,
+        min_valor: this.temperaturaMin,
+        topico_sensor: "/tempCorp"
+      }
+    ];
+    console.log(config)
+     let response= await this.sensorConfigService.postSensorConfig(config)
+     console.log("RESPUESTA",response)/*.subscribe(
+      (response) => {
+        console.log('psot');
+        console.log('Las configuraciones de los sensores se han enviado correctamente:');
+        // Manejar la respuesta del servidor si es necesario
+      },
+      (error) => {
+        console.error('Error al enviar las configuraciones de los sensores:');
+        // Manejar el error adecuadamente
+      }
+    );*/
   }
 }

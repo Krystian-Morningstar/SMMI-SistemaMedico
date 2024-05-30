@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class RecetaService {
-  private apiUrl = 'https://smmi-api-production.up.railway.app/api/recetas';
+  private apiUrl = 'http://localhost:3000/api/recetas';
 
   constructor(private http: HttpClient) { }
 

@@ -46,19 +46,29 @@
         <section class="tarjeta" *ngFor="let signos of SignosVitales">
           <section class="hora2">
             <div class="input-group">
-              <label for="ritmo">Ritmo cardiaco:</label>
-              <input type="number" id="ritmo1" placeholder="Valor mínimo" inputmode="numeric" pattern="\d*">
-              <input type="number" id="ritmo2" placeholder="Valor máximo" inputmode="numeric" pattern="\d*">
+              <label for="ritmo">Oxigenacion:</label>
+              <input type="number" id="oxigenacion1" placeholder="Valor mínimo" inputmode="numeric" pattern="\d*" [(ngModel)]="oxigenacionMin">
+              <input type="number" id="oxigenacion2" placeholder="Valor máximo" inputmode="numeric" pattern="\d*" [(ngModel)]="oxigenacionMax">
             </div>
             <div class="input-group">
-              <label for="presion">Presión:</label>
-              <input type="number" id="presion1" placeholder="Valor mínimo" inputmode="numeric" pattern="\d*">
-              <input type="number" id="presion2" placeholder="Valor máximo" inputmode="numeric" pattern="\d*">
+              <label for="presion">Frecuencia cardiaca:</label>
+              <input type="number" id="frecard1" placeholder="Valor mínimo" inputmode="numeric" pattern="\d*" [(ngModel)]="frecuenciaCardiacaMin">
+              <input type="number" id="frecard2" placeholder="Valor máximo" inputmode="numeric" pattern="\d*" [(ngModel)]="frecuenciaCardiacaMax">
+            </div>
+            <div class="input-group">
+              <label for="temperatura">Presion Sistolica:</label>
+              <input type="number" id="presionsis1" placeholder="Valor mínimo" inputmode="numeric" pattern="\d*" [(ngModel)]="presionSistolicaMin">
+              <input type="number" id="presionsis2" placeholder="Valor máximo" inputmode="numeric" pattern="\d*" [(ngModel)]="presionSistolicaMax">
+            </div>
+            <div class="input-group">
+              <label for="temperatura">Presion Diastolica:</label>
+              <input type="number" id="presiondia1" placeholder="Valor mínimo" inputmode="numeric" pattern="\d*" [(ngModel)]="presionDiastolicaMin">
+              <input type="number" id="presiondia2" placeholder="Valor máximo" inputmode="numeric" pattern="\d*" [(ngModel)]="presionDiastolicaMax">
             </div>
             <div class="input-group">
               <label for="temperatura">Temperatura:</label>
-              <input type="number" id="temperatura1" placeholder="Valor mínimo" inputmode="numeric" pattern="\d*">
-              <input type="number" id="temperatura2" placeholder="Valor máximo" inputmode="numeric" pattern="\d*">
+              <input type="number" id="temperatura1" placeholder="Valor mínimo" inputmode="numeric" pattern="\d*" [(ngModel)]="temperaturaMin">
+              <input type="number" id="temperatura2" placeholder="Valor máximo" inputmode="numeric" pattern="\d*" [(ngModel)]="temperaturaMax">
             </div>
           </section>
         </section>

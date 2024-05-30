@@ -29,7 +29,8 @@ export class Login2Component {
   async onSubmit() {
     this.actualizarUsuario();
     if (!this.usuario.matricula || !this.usuario.contraseña) {
-      this.showToast('blankFieldsToast');  this.router.navigate(['/inicio']);
+      this.showToast('blankFieldsToast');
+      this.router.navigate(['/inicio']);
       return;
     }
 
@@ -40,33 +41,29 @@ export class Login2Component {
           this.showToast('successToast');
           localStorage.setItem('token', respuesta.token);
           localStorage.setItem('matricula', this.usuario.matricula);  
-          this.isLoggedIn = false;
-          this.router.navigate(['/inicio']);
-          return
+          this.isLoggedIn = true;
+          this.router.navigate(['/siguiente-ventana']); // Cambia 'siguiente-ventana' por la ruta de tu siguiente ventana
+          return;
         }
-        } catch (error) {
-          this.showToast('errorToast');
-          return
-        }
-      }else{
+      } catch (error) {
         this.showToast('errorToast');
-
+        return;
       }
-        
+    } else {
+      this.showToast('errorToast');
+    }
   }
 
   validateMatricula(matricula: string): boolean {
     // Validar la matrícula 
     const regex = /^M\d{5}[a-zA-Z]$/;
     return regex.test(matricula);
-    //return true;
   }
 
   validatePassword(password: string): boolean {
-    // Validar  una contraseña segura
+    // Validar una contraseña segura
     const regex = /^(?=.*[a-z])(?=.*\d).{8,}$/;
     return regex.test(password);
-    //return true;
   }
 
   showToast(toastId: string) {
@@ -83,5 +80,3 @@ export class Login2Component {
     passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
   }
 }
-
-

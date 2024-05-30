@@ -195,7 +195,7 @@ button:hover {
   padding: 2rem;
   display: flex; /* Cambiamos la visualización a flex */
   flex-direction: column; /* Establecemos la dirección como columna */
-  margin-top: -250px;
+  margin-top: -190px;
 
 
 }
@@ -209,7 +209,7 @@ button:hover {
   margin: 90px 3%;
   color: #363636;
   padding: 2rem;
-  margin-top: -150px;
+  margin-top: -90px;
   flex-direction: column;
 }
 
