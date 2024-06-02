@@ -30,7 +30,7 @@ export class PerfilComponent implements OnInit {
         let a : any= await this.perfilService.perfil(matricula).toPromise();
         this.perfil.nombres = a.nombres;
         this.perfil.apellidos = a.apellidos;
-        this.perfil.matricula = a.matricula;
+        this.perfil.matricula = a.cedula;
         this.perfil.telefono = a.telefono;
       }
     }

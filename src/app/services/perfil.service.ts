@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class PerfilService {
-  api_url =environment.url_api + 'api/admin/';
+  api_url =environment.url_api + 'api/medicos/';
   constructor(private http: HttpClient) { }
 
   headers= new HttpHeaders({

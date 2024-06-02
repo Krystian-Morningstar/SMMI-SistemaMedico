@@ -22,8 +22,10 @@ h1 {
   margin: 100px 3%;
   color: #63686a;
   padding: 2rem;
-  margin-top: 20px;
+  margin-top: -20px;
   margin-right: 100px;
+  
+
 }
 
 .form {
@@ -121,7 +123,8 @@ button:hover {
   display: flex;
   flex-direction: column;
   width: 25vw; /* Ajusta el ancho según sea necesario */
-  margin-top: 50px;
+  margin-top: 0px;
+  height: 25vw;
 }
 
 
@@ -143,6 +146,9 @@ button:hover {
 
 .container3 {
   width: 25vw; /* Ajusta el ancho según sea necesario */
+  position: relative;
+  margin-top: 30px;
+  height: 15vw;
 }
 
 

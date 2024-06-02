@@ -10,19 +10,11 @@ export class SensorConfigService {
 
   constructor(private http: HttpClient) { }
 
-  /*postSensorConfig(config: any): Observable<any> {
+  postSensorConfig(config: any): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
 
     return this.http.post<any>(this.apiUrl, config, { headers: headers });
-  }*/
-
-  async postSensorConfig(config:any){
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
-
-    return await this.http.post(this.apiUrl, config, { headers: headers });
   }
 }

@@ -41,16 +41,16 @@ export class RECETAComponent implements OnInit {
       temperatura: 'x',
     },
   ];
-  oxigenacionMin: number =0;
-  oxigenacionMax: number=0;
-  frecuenciaCardiacaMin: number=0;
-  frecuenciaCardiacaMax: number=0;
-  presionSistolicaMin: number=0;
-  presionSistolicaMax: number=0;
-  presionDiastolicaMin: number=0;
-  presionDiastolicaMax: number=0;
-  temperaturaMin: number=0;
-  temperaturaMax: number=0;
+  oxigenacionMin: number =80;
+  oxigenacionMax: number=80;
+  frecuenciaCardiacaMin: number=80;
+  frecuenciaCardiacaMax: number=80;
+  presionSistolicaMin: number=80;
+  presionSistolicaMax: number=80;
+  presionDiastolicaMin: number=80;
+  presionDiastolicaMax: number=80;
+  temperaturaMin: number=80;
+  temperaturaMax: number=80;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -88,19 +88,93 @@ export class RECETAComponent implements OnInit {
     this.fechaActual = hoy.toLocaleDateString();
   }
 
-  navegarAhistorial() {
+  async navegarAhistorial() {
     const recetaData = {
       matricula_medico: 'M98765C',
       id_ingreso: this.idIngreso,
       medicamentos: this.medicamentos,
       indicaciones_addic: this.indicacionesAdicionales,
     };
-    this.recetaService.crearReceta(recetaData).subscribe(async () => {
+    console.log("INICIO")
+    await this.enviarConfiguracionesSensores()
+    console.log("FIN");
+    
+    this.recetaService.crearReceta(recetaData).subscribe(() => {
       this.router.navigate(['/habitacion'], { queryParams: { id: this.idIngreso } });
-      await this.enviarConfiguracionesSensores()
     }, error => {
       console.error('Error al guardar la receta:', error);
       this.errorMessage = `Error al guardar la receta: ${error}`;
+    });
+    
+  }
+
+  async navegarAhistorial2() {
+    const config={"config":[
+
+      {
+        "max_valor": this.oxigenacionMax,
+        "min_valor": this.oxigenacionMin,
+        "topico_sensor": "/oxig"
+      },
+      {
+        "max_valor": this.frecuenciaCardiacaMax,
+        "min_valor":this.frecuenciaCardiacaMin,
+        "topico_sensor": "/freqCard"
+      },
+      {
+        "max_valor": this.presionSistolicaMax,
+        "min_valor": this.presionSistolicaMin,
+        "topico_sensor": "/presArtsist"
+      },
+      {
+        "max_valor": this.presionDiastolicaMax,
+        "min_valor": this.presionDiastolicaMin,
+        "topico_sensor": "/presArtdiast"
+      },
+      {
+        "max_valor": this.temperaturaMax,
+        "min_valor": this.temperaturaMin,
+        "topico_sensor": "/tempCorp"
+      }
+    ],
+    "id_habitacion": 1
+  
+  
+  } /*SensorConfig[] = {
+    config: [
+      {
+        max_valor: this.oxigenacionMax,
+        min_valor: this.oxigenacionMin,
+        topico_sensor: "/oxig"
+      },
+      {
+        max_valor: this.frecuenciaCardiacaMax,
+        min_valor: this.frecuenciaCardiacaMin,
+        topico_sensor: "/freqCard"
+      },
+      {
+        max_valor: this.presionSistolicaMax,
+        min_valor: this.presionSistolicaMin,
+        topico_sensor: "/presArtsist"
+      },
+      {
+        max_valor: this.presionDiastolicaMax,
+        min_valor: this.presionDiastolicaMin,
+        topico_sensor: "/presArtdiast"
+      },
+      {
+        max_valor: this.temperaturaMax,
+        min_valor: this.temperaturaMin,
+        topico_sensor: "/tempCorp"
+      }
+    ]
+  }*/
+  
+    this.sensorConfigService.postSensorConfig(config).subscribe(() => {
+      this.router.navigate(['/habitacion'], { queryParams: { id: this.idIngreso } });
+    }, error => {
+      console.error('Error al guardar los sensores:', error);
+      this.errorMessage = `Error al guardar los sensores: ${error}`;
     });
     
   }
@@ -135,8 +209,8 @@ export class RECETAComponent implements OnInit {
       }
     ];
     console.log(config)
-     let response= await this.sensorConfigService.postSensorConfig(config)
-     console.log("RESPUESTA",response)/*.subscribe(
+     /*let response= await this.sensorConfigService.postSensorConfig(config)
+     console.log("RESPUESTA",response.data)/*.subscribe(
       (response) => {
         console.log('psot');
         console.log('Las configuraciones de los sensores se han enviado correctamente:');
