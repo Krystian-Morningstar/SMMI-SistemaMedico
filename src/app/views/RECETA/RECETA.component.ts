@@ -59,7 +59,7 @@ export class RECETAComponent implements OnInit {
     private sensorConfigService: SensorConfigService, // Inyecta el servicio de configuraciones de sensores
     private router: Router
   ) {}
-  
+  matricula: string=""
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(params => {
@@ -67,6 +67,7 @@ export class RECETAComponent implements OnInit {
       this.obtenerFechaActual();
       this.cargarInformacionPaciente();
     });
+    this. matricula=localStorage.getItem('matricula') || ''
   }
 
   cargarInformacionPaciente(): void {
@@ -90,7 +91,7 @@ export class RECETAComponent implements OnInit {
 
   async navegarAhistorial() {
     const recetaData = {
-      matricula_medico: 'M98765C',
+      matricula_medico: this.matricula,
       id_ingreso: this.idIngreso,
       medicamentos: this.medicamentos,
       indicaciones_addic: this.indicacionesAdicionales,
@@ -137,7 +138,7 @@ export class RECETAComponent implements OnInit {
         "topico_sensor": "/tempCorp"
       }
     ],
-    "id_habitacion": 1
+    "id_habitacion": 3
   
   
   } /*SensorConfig[] = {

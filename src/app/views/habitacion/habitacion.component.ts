@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HabitacionesService } from 'src/app/services/habitaciones.service';
 import { registro_Interface } from 'src/app/models/registro.model';
 import { RecetaService } from 'src/app/services/receta.service';
+import { AlertasReportesService } from 'src/app/services/alertas-reportes.service';
 
 @Component({
   selector: 'app-habitacion',
@@ -12,7 +13,8 @@ import { RecetaService } from 'src/app/services/receta.service';
 })
 export class HabitacionComponent {
   historial: any[] = []; 
-constructor(private activatedRoute: ActivatedRoute, private habitacioneService: HabitacionesService,private router: Router, private recetaservice: RecetaService) {}
+  Incidencias: any[]=[];
+constructor(private activatedRoute: ActivatedRoute, private habitacioneService: HabitacionesService,private router: Router, private recetaservice: RecetaService, private incidencias:AlertasReportesService) {}
 idIngreso: any
 mensaje: string = '';
 
@@ -23,6 +25,10 @@ async ngOnInit(): Promise<void> {
   await this.recetaservice.obtenerreceta(this.idIngreso).subscribe((data: any) => {
     this.historial = data;
     console.log('Historial de recetas:', this.historial);
+  });
+  await this.incidencias.getAlertasReportes(this.idIngreso).subscribe((data: any) => {
+    this.Incidencias = data;
+    console.log('Historial de incidencias:', this.Incidencias);
   });
   
 

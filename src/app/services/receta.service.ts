@@ -9,19 +9,19 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class RecetaService {
-  private apiUrl = 'http://localhost:3000/api/recetas';
+  api_url =environment.url_api +  'api/recetas';
 
   constructor(private http: HttpClient) { }
 
   crearReceta(receta: NuevaReceta): Observable<any> {
-    return this.http.post<any>(this.apiUrl, receta)
+    return this.http.post<any>(this.api_url, receta)
       .pipe(
         catchError(this.handleError)
       );
   }
 
   obtenerreceta(id: string): Observable<string>{
-    let result =  this.http.get<string>(environment.url_api + 'api/recetas/'+ id);
+    let result =  this.http.get<string>(this.api_url +"/"+ id);
     return result;
   }
 

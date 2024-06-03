@@ -7,12 +7,12 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class IngresosPorEspecialidadService {
-    private apiUrl = 'http://localhost:3000';
+  api_url =environment.url_api + 'api/ingresos/especialidad';
 
   constructor(private http: HttpClient) { }
 
   obtenerIngresosPorEspecialidad(idEspecialidad: number): Observable<any[]> {
-    const url = `${this.apiUrl}/api/ingresos/especialidad/${idEspecialidad}`;
+    const url = `${this.api_url}/${idEspecialidad}`;
     return this.http.get<any[]>(url);
   }
 }

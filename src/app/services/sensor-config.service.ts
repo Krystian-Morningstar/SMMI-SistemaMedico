@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SensorConfigService {
-  private apiUrl = 'http://localhost:3000/api/config-sensores';
+  api_url =environment.url_api + 'api/config-sensores';
 
   constructor(private http: HttpClient) { }
 
@@ -15,6 +16,6 @@ export class SensorConfigService {
       'Content-Type': 'application/json'
     });
 
-    return this.http.post<any>(this.apiUrl, config, { headers: headers });
+    return this.http.post<any>(this.api_url, config, { headers: headers });
   }
 }
