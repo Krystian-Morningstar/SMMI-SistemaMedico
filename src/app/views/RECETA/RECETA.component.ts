@@ -138,7 +138,7 @@ export class RECETAComponent implements OnInit {
         "topico_sensor": "/tempCorp"
       }
     ],
-    "id_habitacion": 3
+    "id_habitacion": this.informacionPaciente.id_habitacion
   
   
   } /*SensorConfig[] = {

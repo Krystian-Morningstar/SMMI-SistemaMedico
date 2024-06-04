@@ -12,16 +12,31 @@ import {SistemaService} from './../../services/sistema.service'
 })
 export class PerfilComponent implements OnInit {
      
-   async ngOnInit(): Promise<void> {
-     this.obtenerPerfil();
-   }
+  
    constructor(private router: Router, private perfilService: PerfilService, private servicio: SistemaService) {}
+   ngOnInit(): void {
+    this.obtenerPerfilFromCache();
+  }
+
+  async obtenerPerfilFromCache() {
+    let cachedProfile = localStorage.getItem('cachedProfile');
+    if (cachedProfile) {
+      this.perfil = JSON.parse(cachedProfile);
+    } else {
+      await this.obtenerPerfil();
+    }
+  }
+
+
+
+
 
    perfil: perfil_interface={
     nombres: "",
     apellidos: "",
     matricula: "",
-    telefono:""
+    telefono:"",
+    imagen:"",
    }
 
    async obtenerPerfil(){
@@ -32,14 +47,16 @@ export class PerfilComponent implements OnInit {
         this.perfil.apellidos = a.apellidos;
         this.perfil.matricula = a.cedula;
         this.perfil.telefono = a.telefono;
+        this.perfil.imagen = a.url_img;
       }
     }
 
    cerrarSesion(){
-    localStorage.removeItem('token')
-    localStorage.removeItem('matricula')
-    localStorage.clear();
-      this.router.navigate(['/login']); 
+    localStorage.removeItem('token');
+    localStorage.removeItem('matricula');
+    localStorage.removeItem('cachedProfile');
+    location.reload();
+    this.router.navigate(['/login']);
    } 
    
 }

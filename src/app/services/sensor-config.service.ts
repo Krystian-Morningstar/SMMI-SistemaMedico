@@ -18,4 +18,6 @@ export class SensorConfigService {
 
     return this.http.post<any>(this.api_url, config, { headers: headers });
   }
+
+  
 }

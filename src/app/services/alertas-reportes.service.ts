@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AlertasReportesService {
-  api_url =environment.url_api +'/api/alertas-reportes/comp';
+  api_url =environment.url_api +'api/alertas-reportes/comp';
 
   constructor(private http: HttpClient) { }
 
