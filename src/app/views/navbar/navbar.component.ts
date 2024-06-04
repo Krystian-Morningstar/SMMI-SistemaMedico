@@ -23,14 +23,6 @@ export class NavbarComponent implements OnInit{
     }
   
 
-  mostrarAlarma(){
-    if(this.mostrarAlarmaa== false){
-      this.mostrarAlarmaa= true;
-      this.servicio.Actualizar_Alerta(true);
-    } else{
-      this.mostrarAlarmaa= false;
-      this.servicio.Actualizar_Alerta(false);
-    }
-  }
+  
 
 }
