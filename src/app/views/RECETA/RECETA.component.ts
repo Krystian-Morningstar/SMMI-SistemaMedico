@@ -69,25 +69,6 @@ export class RECETAComponent implements OnInit {
    
       
     });
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    this. matricula=localStorage.getItem('matricula') || ''
   }
 
   cargarInformacionPaciente(): void {
@@ -104,7 +85,6 @@ export class RECETAComponent implements OnInit {
       this.errorMessage = `Error al cargar la información del paciente: ${error}`;
     });
   }
-
   obtenerFechaActual() {
     const hoy = new Date();
     this.fechaActual = hoy.toLocaleDateString();
@@ -131,9 +111,7 @@ export class RECETAComponent implements OnInit {
   }
 
   obtener_sensores() {
-    console.log("prueba");
     this.sensorConfigService.obtenersensores(this.informacionPaciente.id_habitacion).subscribe((data) => {
-      console.log("prueba4", data, this.informacionPaciente.id_habitacion);
       for (let i = 0; i < data.length; i++) {
         const sensor = data[i];
         switch (sensor.topico_sensor) {
@@ -237,8 +215,7 @@ export class RECETAComponent implements OnInit {
         topico_sensor: "/tempCorp"
       }
     ];
-    console.log(config)
-   
+
 
    
 

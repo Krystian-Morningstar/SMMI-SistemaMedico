@@ -6,7 +6,7 @@
     top: 60px;
     left: 0;
     height: 100%;
-    z-index: 1; 
+    z-index: 99; 
     width: 230px; 
     background: linear-gradient(179.81deg, rgba(69, 70, 71, 0.8) 104.22%, rgba(0, 142, 200, 0.8) 116.73%);
     padding: 20px; 

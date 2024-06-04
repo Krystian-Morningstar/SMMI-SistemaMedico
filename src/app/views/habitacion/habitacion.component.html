@@ -34,33 +34,7 @@
   </div>
   
   <body class="body2">
-    <div class="container2">
-      <div class="fila0">
-        <h1>Historial de incidencias</h1>
-      </div>
-      <div class="back2">
-        <h1></h1>
-      </div>
-      <div class="historial">
-        <section class="tarjeta "  *ngFor="let incidencia of Incidencias">
-          <section class="hora">
-            <div>
-              <h4>Hora alarma:</h4>
-              <p>{{ incidencia.horaAlarma }}</p>
-            </div>
-            <div>
-              <h4>Fecha:</h4>
-              <p>{{ incidencia.fecha }}</p>
-            </div>
-          </section>
-          <h4>Evento crítico:</h4>
-          <p>{{ incidencia.eventoCritico }}</p>
-          <h4>Acciones tomadas:</h4>
-          <p>{{ incidencia.accionesTomadas }}</p>
-        </section>
-      </div>
-    </div>
-    
+   
     <div class="container3">
       <div class="fila0">
         <h1>Historial de Recetas</h1>
@@ -73,7 +47,7 @@
           <section class="hora">
             <div>
               <h4>Hora alarma:</h4>
-              <p>{{ historialR.ingreso.hora_ingreso}}</p> <!-- Corregido: historial.horaAlarma -->
+              <p>{{ historialR.ingreso.hora_ingreso}}</p> 
             </div>
             <div>
               <h4>Fecha:</h4>
@@ -81,11 +55,11 @@
             </div>
           </section>
           <h4>Doctor:</h4>
-          <p>{{historialR.medico.nombres}}</p> <!-- Ajustar al nombre de la propiedad que contiene el nombre del doctor -->
+          <p>{{historialR.medico.nombres}}</p> 
           <h4>Medicamentos:</h4>
-          <p>{{ historialR.medicamentos}}</p> <!-- Ajustar al nombre de la propiedad que contiene los medicamentos -->
+          <p>{{ historialR.medicamentos}}</p> 
           <h4>Indicaciones Adicionales:</h4>
-          <p>{{ historialR.indicaciones_addic }}</p> <!-- Ajustar al nombre de la propiedad que contiene las indicaciones -->
+          <p>{{ historialR.indicaciones_addic }}</p> 
         </section>
       </div>
     </div>
