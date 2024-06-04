@@ -15,6 +15,7 @@ import { RECETAComponent } from './views/RECETA/RECETA.component';
 import { CamasComponent } from './views/camas/camas.component';
 import { CommonModule } from '@angular/common';
 import { IncidenciasComponent } from './views/incidencias/incidencias.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { IncidenciasComponent } from './views/incidencias/incidencias.component'
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    NgApexchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
