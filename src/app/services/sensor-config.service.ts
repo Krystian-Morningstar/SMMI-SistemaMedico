@@ -19,5 +19,12 @@ export class SensorConfigService {
     return this.http.post<any>(this.api_url, config, { headers: headers });
   }
 
+  obtenersensores(id: number): Observable<any>{
+    let result =  this.http.get<any>(this.api_url +"/"+ id);
+    return result;
+  }
+
+
+
   
 }

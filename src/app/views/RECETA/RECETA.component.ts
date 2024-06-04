@@ -41,16 +41,16 @@ export class RECETAComponent implements OnInit {
       temperatura: 'x',
     },
   ];
-  oxigenacionMin: number =80;
-  oxigenacionMax: number=80;
-  frecuenciaCardiacaMin: number=80;
-  frecuenciaCardiacaMax: number=80;
-  presionSistolicaMin: number=80;
-  presionSistolicaMax: number=80;
-  presionDiastolicaMin: number=80;
-  presionDiastolicaMax: number=80;
-  temperaturaMin: number=80;
-  temperaturaMax: number=80;
+  oxigenacionMin: number =0;
+  oxigenacionMax: number=0;
+  frecuenciaCardiacaMin: number=0;
+  frecuenciaCardiacaMax: number=0;
+  presionSistolicaMin: number=0;
+  presionSistolicaMax: number=0;
+  presionDiastolicaMin: number=0;
+  presionDiastolicaMax: number=0;
+  temperaturaMin: number=0;
+  temperaturaMax: number=0;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -65,8 +65,28 @@ export class RECETAComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       this.idIngreso = params['id'];
       this.obtenerFechaActual();
-      this.cargarInformacionPaciente();
+     this.cargarInformacionPaciente();
+   
+      
     });
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     this. matricula=localStorage.getItem('matricula') || ''
   }
 
@@ -78,6 +98,7 @@ export class RECETAComponent implements OnInit {
         id_especialidad: data.id_especialidad.nombre,
         id_habitacion: data.id_habitacion.id_habitacion
       };
+      this.obtener_sensores();
     }, error => {
       console.error('Error al cargar la información del paciente:', error);
       this.errorMessage = `Error al cargar la información del paciente: ${error}`;
@@ -108,6 +129,41 @@ export class RECETAComponent implements OnInit {
     });
     
   }
+
+  obtener_sensores() {
+    console.log("prueba");
+    this.sensorConfigService.obtenersensores(this.informacionPaciente.id_habitacion).subscribe((data) => {
+      console.log("prueba4", data, this.informacionPaciente.id_habitacion);
+      for (let i = 0; i < data.length; i++) {
+        const sensor = data[i];
+        switch (sensor.topico_sensor) {
+          case '/oxig':
+            this.oxigenacionMin = sensor.min_valor;
+            this.oxigenacionMax = sensor.max_valor;
+            break;
+          case '/freqCard':
+            this.frecuenciaCardiacaMin = sensor.min_valor;
+            this.frecuenciaCardiacaMax = sensor.max_valor;
+            break;
+          case '/presArtsist':
+            this.presionSistolicaMin = sensor.min_valor;
+            this.presionSistolicaMax = sensor.max_valor;
+            break;
+          case '/presArtdiast':
+            this.presionDiastolicaMin = sensor.min_valor;
+            this.presionDiastolicaMax = sensor.max_valor;
+            break;
+          case '/tempCorp':
+            this.temperaturaMin = sensor.min_valor;
+            this.temperaturaMax = sensor.max_valor;
+            break;
+          default:
+            console.warn(`Tópico no reconocido: ${sensor.topico_sensor}`);
+        }
+      }
+    });
+  }
+  
 
   async navegarAhistorial2() {
     const config={"config":[
@@ -141,35 +197,7 @@ export class RECETAComponent implements OnInit {
     "id_habitacion": this.informacionPaciente.id_habitacion
   
   
-  } /*SensorConfig[] = {
-    config: [
-      {
-        max_valor: this.oxigenacionMax,
-        min_valor: this.oxigenacionMin,
-        topico_sensor: "/oxig"
-      },
-      {
-        max_valor: this.frecuenciaCardiacaMax,
-        min_valor: this.frecuenciaCardiacaMin,
-        topico_sensor: "/freqCard"
-      },
-      {
-        max_valor: this.presionSistolicaMax,
-        min_valor: this.presionSistolicaMin,
-        topico_sensor: "/presArtsist"
-      },
-      {
-        max_valor: this.presionDiastolicaMax,
-        min_valor: this.presionDiastolicaMin,
-        topico_sensor: "/presArtdiast"
-      },
-      {
-        max_valor: this.temperaturaMax,
-        min_valor: this.temperaturaMin,
-        topico_sensor: "/tempCorp"
-      }
-    ]
-  }*/
+  } 
   
     this.sensorConfigService.postSensorConfig(config).subscribe(() => {
       this.router.navigate(['/habitacion'], { queryParams: { id: this.idIngreso } });
@@ -210,17 +238,10 @@ export class RECETAComponent implements OnInit {
       }
     ];
     console.log(config)
-     /*let response= await this.sensorConfigService.postSensorConfig(config)
-     console.log("RESPUESTA",response.data)/*.subscribe(
-      (response) => {
-        console.log('psot');
-        console.log('Las configuraciones de los sensores se han enviado correctamente:');
-        // Manejar la respuesta del servidor si es necesario
-      },
-      (error) => {
-        console.error('Error al enviar las configuraciones de los sensores:');
-        // Manejar el error adecuadamente
-      }
-    );*/
+   
+
+   
+
   }
-}
+  }
+
