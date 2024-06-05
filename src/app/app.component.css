@@ -1,7 +1,6 @@
 body {
     margin: 0; 
   }
-  
 
 .contenedor{
     height: 100vh;
@@ -10,8 +9,9 @@ body {
     width: 100vw;
     height: 100vh;
 }
-
 .navbar{
+  display: block;
+  height: 20%;
     position: fixed;
     width: 100vw;
     left: 0;
@@ -23,7 +23,6 @@ body {
     min-height: 100vh; /* Para asegurar que cubre toda la altura de la ventana */
     margin-top: 10px;
     overflow: auto;
-
 }
   
 .content {
