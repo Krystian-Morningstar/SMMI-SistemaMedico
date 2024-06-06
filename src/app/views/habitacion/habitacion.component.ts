@@ -28,7 +28,7 @@ export type ChartOptions = {
   templateUrl: './habitacion.component.html',
   styleUrls: ['./habitacion.component.css'],
 })
-export class HabitacionComponent implements OnDestroy  {
+export class HabitacionComponent implements OnDestroy{
   @ViewChild("oxig") oxigChart!: ChartComponent;
   @ViewChild("freqCard") freqCardChart!: ChartComponent;
   @ViewChild("presArtsist") presArtsistChart!: ChartComponent 
@@ -146,6 +146,7 @@ export class HabitacionComponent implements OnDestroy  {
         this.informacionPaciente.id_especialidad = data.id_especialidad.nombre;
         this.informacionPaciente.id_habitacion = data.id_habitacion.id_habitacion;
       });
+      this.getStadistics(this.idIngreso)
   }
 
   Receta() {
@@ -213,5 +214,4 @@ export class HabitacionComponent implements OnDestroy  {
     })
     this.subscriptions.push(tempCorpSubscription)
   }
-
 }

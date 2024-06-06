@@ -33,7 +33,6 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     FormsModule,
     CommonModule,
     NgApexchartsModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
