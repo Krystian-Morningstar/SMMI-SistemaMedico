@@ -83,3 +83,19 @@ body {
 .contenido ul li {
   padding: 3px 0;
 }
+
+.signos img{
+  width: 4rem;
+  height: 4rem;
+margin-left: 9rem;
+animation: shine-animation 0.3s infinite alternate;
+
+}
+@keyframes shine-animation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}

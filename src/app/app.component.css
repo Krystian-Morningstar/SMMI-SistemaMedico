@@ -1,14 +1,12 @@
 .app-container{
     height: 100vh;
-    background: linear-gradient(to bottom, #ffffff, rgb(219, 227, 230)); 
+    background: linear-gradient(to bottom, #ffffff, rgb(204, 209, 211)); 
     position: fixed;
     width: 100vw;
-    height: 100vh;
-    display: flex;
     min-height: 100vh; 
     margin-top: 10px;
     overflow: auto;
- 
+    left: 0;
 }
 
 .navbar{
@@ -25,3 +23,8 @@
     overflow-y: auto; 
     position: relative;
   }
+
+  body {
+    margin: 0; 
+  }
+  

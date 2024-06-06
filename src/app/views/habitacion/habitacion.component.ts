@@ -38,7 +38,6 @@ export class HabitacionComponent {
       .subscribe((data: any) => {
         this.Incidencias = data;
         console.log(this.Incidencias);
-
       });
 
     this.habitacioneService
@@ -54,8 +53,7 @@ export class HabitacionComponent {
         this.informacionPaciente.id_enfermera =
           data.id_enfermera.nombres + ' ' + data.id_enfermera.apellidos;
         this.informacionPaciente.id_especialidad = data.id_especialidad.nombre;
-        this.informacionPaciente.id_habitacion =
-          data.id_habitacion.id_habitacion;
+        this.informacionPaciente.id_habitacion = data.id_habitacion.id_habitacion;
       });
   }
 

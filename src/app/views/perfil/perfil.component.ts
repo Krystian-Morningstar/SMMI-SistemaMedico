@@ -37,6 +37,7 @@ export class PerfilComponent implements OnInit {
     matricula: "",
     telefono:"",
     imagen:"",
+    especialidad:[],
    }
 
    async obtenerPerfil(){
@@ -45,9 +46,11 @@ export class PerfilComponent implements OnInit {
         let a : any= await this.perfilService.perfil(matricula).toPromise();
         this.perfil.nombres = a.nombres;
         this.perfil.apellidos = a.apellidos;
-        this.perfil.matricula = a.cedula;
+        this.perfil.matricula = matricula;
         this.perfil.telefono = a.telefono;
         this.perfil.imagen = a.url_img;
+        this.perfil.especialidad = a.especialidades;
+       console.log(a)
       }
     }
 

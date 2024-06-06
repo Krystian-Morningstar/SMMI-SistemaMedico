@@ -4,4 +4,5 @@ export interface perfil_interface{
     matricula: string;
     telefono: string;
     imagen:String;
+    especialidad: []|any; 
 }
