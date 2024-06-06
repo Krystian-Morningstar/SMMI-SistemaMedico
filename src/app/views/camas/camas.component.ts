@@ -44,10 +44,6 @@ export class CamasComponent {
     for(let i = 0; i< a.especialidades.length; i++){
     this.especialidadId[i] = a.especialidades[i].id
     }
-
-
-    
- 
   }
 
   async ngOnInit(){

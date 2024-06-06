@@ -1,14 +1,14 @@
-body {
-    margin: 0; 
-  }
-  
-
-.contenedor{
+.app-container{
     height: 100vh;
     background: linear-gradient(to bottom, #ffffff, rgb(219, 227, 230)); 
     position: fixed;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    min-height: 100vh; 
+    margin-top: 10px;
+    overflow: auto;
+ 
 }
 
 .navbar{
@@ -17,26 +17,11 @@ body {
     left: 0;
     top: 0;
 }
-.contenedor {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Para asegurar que cubre toda la altura de la ventana */
-    margin-top: 10px;
-    overflow: auto;
 
-}
   
 .content {
-    margin-top: 80px; /* Ajusta según la altura de tu navbar */
+    margin-top: 80px; 
     flex-grow: 1;
-    overflow-y: auto; /* Permite el scroll vertical dentro del contenido principal */
+    overflow-y: auto; 
     position: relative;
-  }
-
-  .app-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh; /* Ocupa toda la altura de la ventana */
-    overflow: hidden; /* Evitar scroll en el contenedor principal */
- 
   }

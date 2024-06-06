@@ -4,46 +4,45 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>Receta Médica</title>
 </head>
 <body>
   <div class="container">
     <div class="fila0">
       <h1>Receta Medica</h1>
-      <button (click)="navegarAhistorial()">Guardar</button>
+      <button (click)="crearReceta()">Guardar</button>
     </div>
     <div class="form">
       <section class="fila1">
         <section class="hora">
           <div>
             <label for="textarea1">Nombre:</label>
-            <p>{{informacionPaciente.nombres}}</p>
+            <p>{{informacionPaciente.nombres}} {{informacionPaciente.apellidos}}</p>
           </div>
           <div>
             <label for="fecha">Fecha:</label>
             <p>{{fechaActual}}</p>
           </div>
         </section>
-        <hr>
         <div class="label-container">
           <label for="medicamentos">Medicamentos:</label>
           <textarea id="medicamentos" rows="4" cols="50" [(ngModel)]="medicamentos"></textarea> 
         </div>
         <div class="label-container">
           <label for="indicaciones">Indicaciones adicionales:</label>
-          <textarea id="indicaciones" rows="4" cols="50" [(ngModel)]="indicacionesAdicionales"></textarea> <!-- Usamos ngModel para vincular el valor de indicacionesAdicionales -->
+          <textarea id="indicaciones" rows="4" cols="50" [(ngModel)]="indicacionesAdicionales"></textarea> 
         </div>
       </section>
     </div>
   </div>
-  <div class="body2">
+  <div class="derecha">
     <div class="container2">
       <div class="back2">
         <h1>Habitacion : sensores</h1>
-        <button (click)="navegarAhistorial2()">Guardar</button>
+        <button (click)="guardarConfiguracion()">Guardar</button>
       </div>
       <div class="historial2">
-        <section class="tarjeta" *ngFor="let signos of SignosVitales">
+        <section  *ngFor="let signos of SignosVitales">
           <section class="hora2">
             <div class="input-group">
               <label for="ritmo">Oxigenacion:</label>
@@ -75,38 +74,27 @@
       </div>
     </div>
     <div class="container3">
-      <section class="registro">
-      </section>
       <div class="historial">
         <section class="tarjeta" >
+          <div class="label-container">
           <section class="hora">
             <div>
-              <label for="sexo">Sexo:</label>
-              <p>{{ informacionPaciente.sexo }}</p>
+            <label for="sexo">Sexo:</label>
+            <p>{{ informacionPaciente.sexo }}</p>
             </div>
             <div>
-              <label for="edad">Edad:</label>
-              <p>{{ informacionPaciente.edad }}</p>
+            <label for="edad">Edad:</label>
+            <p>{{ informacionPaciente.edad }}</p>
             </div>
           </section>
-          <hr>
-          <div class="label-container">
             <label for="padecimientos">Padecimientos:</label>
             <p>{{informacionPaciente.padecimientos}}</p>
-          </div>
-          <div class="label-container">
             <label for="alergias">Alergias:</label>
             <p>{{informacionPaciente.alergias}}</p>
-          </div>
-          <div class="label-container">
             <label for="causa">Causa de Ingreso:</label>
             <p>{{informacionPaciente.causa_ingreso}}</p>
-          </div>
-          <div class="label-container">
             <label for="enfermera">Enfermera Asignada:</label>
             <p>{{informacionPaciente.id_enfermera}}</p>
-          </div>
-          <div class="label-container">
             <label for="especialidad">Especialidad Asignada:</label>
             <p>{{informacionPaciente.id_especialidad}}</p>
           </div>
@@ -114,6 +102,5 @@
       </div>
     </div>
   </div>
-  <script src="script.js"></script> <!-- Enlace al archivo JS -->
 </body>
 </html>

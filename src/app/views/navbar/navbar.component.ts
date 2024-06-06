@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, HostListener} from '@angular/core';
 import {SistemaService} from './../../services/sistema.service'
 
 @Component({
@@ -17,12 +17,17 @@ export class NavbarComponent implements OnInit{
       this.mostrar = false;
     }
 
-    mostrarMenu() {
-      this.mostrar = !this.mostrar; // Alternar el estado del menú
-      this.servicio.Actualizar_Menu(this.mostrar);
+    @HostListener('document:click', ['$event'])
+  onClick(event: MouseEvent) {
+    if (this.mostrar == true) {
+      this.mostrar = false;
+      this.servicio.Actualizar_Menu(false);
     }
+  }
+  mostrarMenu(event: Event) {
+    event.stopPropagation(); 
+    this.mostrar = !this.mostrar; 
+    this.servicio.Actualizar_Menu(this.mostrar);
+  }
   
-
-  
-
 }

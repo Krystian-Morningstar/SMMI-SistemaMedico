@@ -32,17 +32,13 @@
       </section>
     </div>
   </div>
-  
-  <body class="body2">
+  <div class="derecha">
     <div class="container2">
       <div class="fila0">
         <h1>Historial de incidencias</h1>
       </div>
-      <div class="back2">
-        <h1></h1>
-      </div>
       <div class="historial">
-        <section class="tarjeta "  *ngFor="let incidencia of Incidencias">
+        <section class="tarjeta" *ngFor="let incidencia of Incidencias">
           <section class="hora">
             <div>
               <h4>Hora alarma:</h4>
@@ -53,23 +49,22 @@
               <p>{{ incidencia.fecha }}</p>
             </div>
           </section>
+          <h4>Duración de la emergencia:</h4>
+          <p>{{incidencia.duracion_emergencia_sg}}</p>
           <h4>Evento crítico:</h4>
-          <p>{{ incidencia.eventoCritico }}</p>
+          <p>{{ incidencia.evento_critico }}</p>
           <h4>Acciones tomadas:</h4>
-          <p>{{ incidencia.accionesTomadas }}</p>
+          <p>{{ incidencia.acciones_tomadas }}</p>
         </section>
       </div>
     </div>
-   
+     
     <div class="container3">
       <div class="fila0">
         <h1>Historial de Recetas</h1>
       </div>
-      <section class="registro">
-        <h1></h1>
-      </section>
       <div class="historial">
-        <section class="tarjeta "  *ngFor="let historialR of historial ">
+        <section class="tarjeta" *ngFor="let historialR of historial ">
           <section class="hora">
             <div>
               <h4>Hora alarma:</h4>
@@ -89,6 +84,7 @@
         </section>
       </div>
     </div>
-  </body>
+  </div>
+ 
 </body>
 </html>
