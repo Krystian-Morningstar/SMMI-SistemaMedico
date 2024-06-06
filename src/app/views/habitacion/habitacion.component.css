@@ -117,3 +117,15 @@ button:hover {
   align-items: center;
   flex-direction: column;
 }
+
+div.graphics{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5%;
+  padding-top: 1%;
+}
+
+div.graphics div{
+  width: 47%;
+  height: auto;
+}

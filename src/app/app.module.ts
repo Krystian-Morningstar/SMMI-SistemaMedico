@@ -12,6 +12,7 @@ import { Login2Component } from './views/login/login.component';
 import { RECETAComponent } from './views/RECETA/RECETA.component';
 import { CamasComponent } from './views/camas/camas.component';
 import { CommonModule } from '@angular/common';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    NgApexchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
