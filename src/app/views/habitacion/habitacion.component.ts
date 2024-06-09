@@ -10,6 +10,8 @@ import {
   ApexAxisChartSeries,
   ApexChart,
   ApexXAxis,
+  ApexStroke,
+  ApexYAxis,
   ApexTitleSubtitle
 } from "ng-apexcharts";
 import { Subscription } from 'rxjs';
@@ -20,6 +22,8 @@ export type ChartOptions = {
   chart: ApexChart;
   xaxis: ApexXAxis;
   title: ApexTitleSubtitle;
+  yaxis: ApexYAxis;
+  stroke: ApexStroke;
 };
 
 @Component({
@@ -46,6 +50,13 @@ export class HabitacionComponent implements OnDestroy, OnInit{
     },
     xaxis: {
       categories: ["1", "2", "3", "4", "5"]
+    },
+    yaxis: {
+      tickAmount: 3,
+    },
+    stroke: {
+      curve: 'smooth',
+      colors: ['#7546d5']
     }
   }
 
@@ -62,6 +73,13 @@ export class HabitacionComponent implements OnDestroy, OnInit{
     },
     xaxis: {
       categories: ["1", "2", "3", "4", "5"]
+    },
+    yaxis: {
+      tickAmount: 4,
+    },
+    stroke: {
+      curve: 'smooth',
+      colors: ['#FFC300']
     }
   }
 
@@ -82,6 +100,13 @@ export class HabitacionComponent implements OnDestroy, OnInit{
     },
     xaxis: {
       categories: ["1", "2", "3", "4", "5"]
+    },
+    yaxis: {
+      tickAmount: 3,
+    },
+    stroke: {
+      curve: 'smooth',
+      colors: ['#FF0000', '#800000']
     }
   }
 
@@ -98,6 +123,13 @@ export class HabitacionComponent implements OnDestroy, OnInit{
     },
     xaxis: {
       categories: ["1", "2", "3", "4", "5"]
+    },
+    yaxis: {
+      tickAmount: 3,
+    },
+    stroke: {
+      curve: 'smooth',
+      colors: ['#008080']
     }
   }
 
