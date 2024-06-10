@@ -108,6 +108,9 @@ button:hover {
 .container2 .container {
   margin-bottom: 20px;
 }
+.container{
+  height: 100%;
+}
 
 .body2 {
   margin: 0;

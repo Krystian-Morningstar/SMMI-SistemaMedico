@@ -12,6 +12,8 @@ import { RECETAComponent } from './views/RECETA/RECETA.component';
 import { CamasComponent } from './views/camas/camas.component';
 import { CommonModule } from '@angular/common';
 import { BusquedaComponent } from './views/busqueda/busqueda.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { BusquedaComponent } from './views/busqueda/busqueda.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    NgApexchartsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
