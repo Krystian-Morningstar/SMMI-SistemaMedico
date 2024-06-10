@@ -1,10 +1,9 @@
-import { Component, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { historialIncidencias_interface } from 'src/app/models/historialIncidencias.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { registro_Interface } from 'src/app/models/registro.model';
 import { RecetaService } from 'src/app/services/receta.service';
 import { AlertasReportesService } from 'src/app/services/alertas-reportes.service';
-import { IngresosPorEspecialidadService } from 'src/app/services/habitacionfiltrada.service';
 import {
   ChartComponent,
   ApexAxisChartSeries,
