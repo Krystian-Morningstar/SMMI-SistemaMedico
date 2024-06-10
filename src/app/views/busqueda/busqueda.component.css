@@ -1,0 +1,101 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .habitaciones {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    justify-content: left;
+    align-items: center;
+    grid-gap: 0px 20px;
+    margin: 0 auto;
+    max-width: 82%;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    overflow: hidden;
+  }
+  .habitacion {
+    position: relative;
+    max-width: 250px;
+    height: 150px;
+    background-color: rgb(94, 92, 92);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    border: hidden;
+    text-align: left;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  
+  .habitaciones button:hover {
+    background-color: rgb(235, 235, 243);
+  }
+
+  .imagen {
+    width: 250px;
+    height: 200px;
+    opacity: 0.4;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+.titulo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 95%;
+  padding: 0px 18px;
+  color: #ffffff;
+  background-color: rgba(40, 41, 41, 0.209);
+  font-weight: 550;
+  margin: 0;
+  font-size: 23px;
+}
+.contenido {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  padding: 0px 18px;
+  box-sizing: border-box;
+  color: rgb(70, 68, 68);
+  background-color: rgba(255, 255, 255, 0.572);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.contenido h2 {
+  margin-top: 0;
+}
+
+.contenido ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contenido ul li {
+  padding: 3px 0;
+}
+
+.signos img{
+  width: 4rem;
+  height: 4rem;
+margin-left: 9rem;
+animation: shine-animation 0.3s infinite alternate;
+
+}
+@keyframes shine-animation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}

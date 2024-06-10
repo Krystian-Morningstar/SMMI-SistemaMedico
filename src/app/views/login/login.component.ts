@@ -42,7 +42,7 @@ export class Login2Component {
           localStorage.setItem('token', respuesta.token);
           localStorage.setItem('matricula', this.usuario.matricula);  
           this.isLoggedIn = true;
-          this.router.navigate(['/siguiente-ventana']); // Cambia 'siguiente-ventana' por la ruta de tu siguiente ventana
+          this.router.navigate(['/inicio']); 
           return;
         }
       } catch (error) {

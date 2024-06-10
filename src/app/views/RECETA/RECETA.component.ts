@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RecetaService } from 'src/app/services/receta.service';
 import { registro_Interface } from 'src/app/models/registro.model';
-import { HabitacionesService } from 'src/app/services/habitaciones.service';
 import { SensorConfigService } from 'src/app/services/sensor-config.service';
 import { SensorConfig } from 'src/app/models/sensores.models'; 
+import { IngresosPorEspecialidadService } from 'src/app/services/habitacionfiltrada.service';
 
 @Component({
   selector: 'app-incidencias',
@@ -52,7 +52,7 @@ export class RECETAComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private habitacioneService: HabitacionesService,
+    private habitacioneService: IngresosPorEspecialidadService,
     private recetaService: RecetaService,
     private sensorConfigService: SensorConfigService,
     private router: Router

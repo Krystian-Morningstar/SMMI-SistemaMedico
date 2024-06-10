@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MedicoService } from '../../services/doctor.service';
 import { Medico } from '../../models/medico.models';
 import { IngresosPorEspecialidadService } from '../../services/habitacionfiltrada.service';
 import { RecetaService } from 'src/app/services/receta.service';
 
 @Component({
-  selector: 'app-camas',
-  templateUrl: './camas.component.html',
-  styleUrls: ['./camas.component.css'],
+  selector: 'app-busqueda',
+  templateUrl: './busqueda.component.html',
+  styleUrls: ['./busqueda.component.css']
 })
-export class CamasComponent implements OnInit {
+export class BusquedaComponent implements OnInit {
+  nombre: any;
   habitaciones: any[] = [];
   matricula: string = '';
-  especialidadId: any[] = [];
+  especialidadIds: number[] = [];
   informacion_Medico: Medico = {
     id: '',
     nombres: '',
@@ -30,10 +31,10 @@ export class CamasComponent implements OnInit {
   };
 
   constructor(
-    private habitacionesService: IngresosPorEspecialidadService,
     private habitacionfiltrada: IngresosPorEspecialidadService,
     private medicoService: MedicoService,
     private router: Router,
+    private route: ActivatedRoute,
     private recetaservice: RecetaService
   ) {
     this.matricula = localStorage.getItem('matricula') || '';
@@ -45,15 +46,22 @@ export class CamasComponent implements OnInit {
       .toPromise();
 
     for (let i = 0; i < a.especialidades.length; i++) {
-      this.especialidadId[i] = a.especialidades[i].id;
+      this.especialidadIds[i] = a.especialidades[i].id;
     }
   }
 
   async ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.nombre = params['nombre'];
+      const especialidades = params['especialidad'];
+      if (especialidades) {
+        this.especialidadIds = especialidades.split(',').map((id: string) => parseInt(id, 10));
+      }
+    });
     await this.cargar_datos();
-    for (let i = 0; i < this.especialidadId.length; i++) {
-      this.habitacionfiltrada
-        .obtenerIngresosPorEspecialidad(this.especialidadId[i])
+
+    for (let id of this.especialidadIds) {
+      this.habitacionfiltrada.buscarPaciente(this.nombre, id)
         .subscribe(async (data: any) => {
           const nuevasHabitaciones = await Promise.all(data.map(async (habitacion: any) => {
             const recetas = await this.recetaservice.obtenerreceta(habitacion.id_ingreso).toPromise();

@@ -27,10 +27,6 @@ export class PerfilComponent implements OnInit {
     }
   }
 
-
-
-
-
    perfil: perfil_interface={
     nombres: "",
     apellidos: "",
@@ -50,7 +46,7 @@ export class PerfilComponent implements OnInit {
         this.perfil.telefono = a.telefono;
         this.perfil.imagen = a.url_img;
         this.perfil.especialidad = a.especialidades;
-       console.log(a)
+        localStorage.setItem('especialidad', JSON.stringify(this.perfil.especialidad));
       }
     }
 

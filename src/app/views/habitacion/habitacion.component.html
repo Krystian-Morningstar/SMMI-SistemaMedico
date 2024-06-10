@@ -38,7 +38,7 @@
         <h1>Historial de incidencias</h1>
       </div>
       <div class="historial">
-        <section class="tarjeta" *ngFor="let incidencia of Incidencias">
+        <div class="tarjeta" *ngFor="let incidencia of Incidencias">
           <section class="hora">
             <div>
               <h4>Hora alarma:</h4>
@@ -55,7 +55,7 @@
           <p>{{ incidencia.evento_critico }}</p>
           <h4>Acciones tomadas:</h4>
           <p>{{ incidencia.acciones_tomadas }}</p>
-        </section>
+        </div>
       </div>
     </div>
      
@@ -64,7 +64,7 @@
         <h1>Historial de Recetas</h1>
       </div>
       <div class="historial">
-        <section class="tarjeta" *ngFor="let historialR of historial ">
+        <div class="tarjeta" *ngFor="let historialR of historial ">
           <section class="hora">
             <div>
               <h4>Hora alarma:</h4>
@@ -81,7 +81,7 @@
           <p>{{ historialR.medicamentos}}</p> 
           <h4>Indicaciones Adicionales:</h4>
           <p>{{ historialR.indicaciones_addic }}</p> 
-        </section>
+        </div>
       </div>
     </div>
   </div>

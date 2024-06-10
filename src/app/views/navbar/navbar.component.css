@@ -1,5 +1,6 @@
  *{
     font-family: Arial, sans-serif;
+
 }
 .Navegador {
   position: relative;
@@ -9,6 +10,7 @@
   grid-template-columns: repeat(14, 1fr);
   background: #ffffff;
   box-shadow: 0 2px 4px rgba(131, 131, 131, 0.4);
+  z-index: 1000;
 }
 
 .Nombre_Pagina {

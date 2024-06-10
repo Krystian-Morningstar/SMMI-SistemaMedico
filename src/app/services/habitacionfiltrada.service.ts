@@ -15,4 +15,12 @@ export class IngresosPorEspecialidadService {
     const url = `${this.api_url}/${idEspecialidad}`;
     return this.http.get<any[]>(url);
   }
+  buscarPaciente(nombre: string, especialidad: number): Observable<any[]> {
+    const url = `${environment.url_api}api/ingresos/busq?nombre=${encodeURIComponent(nombre)}&id_esp=${encodeURIComponent(especialidad)}`;
+    return this.http.get<any[]>(url);
+  }
+  habitacion(id: string): Observable<string>{
+    let result =  this.http.get<string>(environment.url_api + 'api/ingresos/'+ id);
+    return result;
+  }
 }

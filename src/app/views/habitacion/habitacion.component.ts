@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { historialIncidencias_interface } from 'src/app/models/historialIncidencias.model';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HabitacionesService } from 'src/app/services/habitaciones.service';
 import { registro_Interface } from 'src/app/models/registro.model';
 import { RecetaService } from 'src/app/services/receta.service';
 import { AlertasReportesService } from 'src/app/services/alertas-reportes.service';
+import { IngresosPorEspecialidadService } from 'src/app/services/habitacionfiltrada.service';
 
 @Component({
   selector: 'app-habitacion',
@@ -16,7 +16,7 @@ export class HabitacionComponent {
   Incidencias: any[] = [];
   constructor(
     private activatedRoute: ActivatedRoute,
-    private habitacioneService: HabitacionesService,
+    private habitacioneService: IngresosPorEspecialidadService,
     private router: Router,
     private recetaservice: RecetaService,
     private incidencias: AlertasReportesService
@@ -37,7 +37,6 @@ export class HabitacionComponent {
       .getAlertasReportes(this.idIngreso)
       .subscribe((data: any) => {
         this.Incidencias = data;
-        console.log(this.Incidencias);
       });
 
     this.habitacioneService
